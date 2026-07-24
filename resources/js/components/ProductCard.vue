@@ -1,6 +1,6 @@
 <script setup>
 import { Link } from '@inertiajs/vue3'
-import { rp } from '@/stores/cart'
+import { rp } from '@/lib/format'
 
 // Reusable product card — matches the catalog/home grid styling exactly.
 defineProps({ product: { type: Object, required: true } })

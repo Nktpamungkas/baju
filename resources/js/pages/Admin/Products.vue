@@ -3,7 +3,7 @@ import { ref, computed } from 'vue'
 import { router } from '@inertiajs/vue3'
 import axios from 'axios'
 import AdminLayout from '@/components/AdminLayout.vue'
-import { rp } from '@/stores/cart'
+import { rp } from '@/lib/format'
 
 const props = defineProps({ products: { type: Array, required: true } })
 

@@ -3,7 +3,7 @@ import { ref, computed } from 'vue'
 import { router } from '@inertiajs/vue3'
 import AppHeader from '@/components/AppHeader.vue'
 import ProductCard from '@/components/ProductCard.vue'
-import { useCart, rp } from '@/stores/cart'
+import { rp } from '@/lib/format'
 
 /**
  * Product detail page (Inertia). In your Laravel controller:
@@ -15,26 +15,9 @@ const props = defineProps({
   related: { type: Array, default: () => [] },
 })
 
-const cart = useCart()
 const varIdx = ref(0)
-const size = ref(null)
-const qty = ref(1)
 
 const currentVariant = computed(() => props.product.variants[varIdx.value])
-const SIZES = ['S', 'M', 'L']
-
-function addToCart() {
-  cart.add({
-    id: props.product.id,
-    name: props.product.name,
-    variant: currentVariant.value.name,
-    size: size.value || 'M',
-    price: props.product.price,
-    img: currentVariant.value.img,
-    qty: qty.value,
-  })
-  router.visit('/keranjang')
-}
 </script>
 
 <template>
@@ -85,28 +68,14 @@ function addToCart() {
             </div>
           </div>
 
-          <!-- Size -->
-          <div class="mt-6">
-            <div class="mb-3 text-[12px] uppercase tracking-[0.14em] text-faint">Pilih Ukuran</div>
-            <div class="flex flex-wrap gap-2.5">
-              <button
-                v-for="s in SIZES" :key="s"
-                class="min-w-[54px] rounded-lg2 border px-4 py-2.5 text-[13.5px]"
-                :class="size === s ? 'border-ink bg-ink text-canvas' : 'border-[#D9D2C7] text-[#3A372F]'"
-                @click="size = s">{{ s }}</button>
-            </div>
-          </div>
-
-          <!-- Qty + add -->
-          <div class="mt-7 flex items-center gap-4">
-            <div class="flex items-center gap-[18px] rounded-pill border border-[#D9D2C7] px-[18px] py-[9px]">
-              <button class="w-4 text-[18px] leading-none" @click="qty = Math.max(1, qty - 1)">−</button>
-              <span class="min-w-[14px] text-center text-[15px]">{{ qty }}</span>
-              <button class="w-4 text-[18px] leading-none" @click="qty = Math.min(9, qty + 1)">+</button>
-            </div>
-            <button class="btn-primary flex-1 whitespace-nowrap" @click="addToCart">
-              Tambah ke Keranjang · {{ rp(product.price * qty) }}
-            </button>
+          <!-- Beli via marketplace -->
+          <div class="mt-7 flex items-center gap-3">
+            <a :href="product.shopee || '#'" :target="product.shopee ? '_blank' : '_self'" rel="noopener"
+              class="btn-primary flex-1 whitespace-nowrap text-center no-underline"
+              :class="{ 'pointer-events-none opacity-40': !product.shopee }">Beli di Shopee</a>
+            <a :href="product.toko || '#'" :target="product.toko ? '_blank' : '_self'" rel="noopener"
+              class="btn-ghost flex-1 whitespace-nowrap text-center no-underline"
+              :class="{ 'pointer-events-none opacity-40': !product.toko }">Beli di Tokopedia</a>
           </div>
 
           <!-- Size table -->

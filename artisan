@@ -5,6 +5,10 @@ use Symfony\Component\Console\Input\ArgvInput;
 
 define('LARAVEL_START', microtime(true));
 
+// See public/index.php — silences the PHP 8.5 vs bundled mysql config
+// deprecation noise without hiding real errors.
+error_reporting(E_ALL & ~E_DEPRECATED);
+
 require __DIR__.'/vendor/autoload.php';
 
 $app = require_once __DIR__.'/bootstrap/app.php';

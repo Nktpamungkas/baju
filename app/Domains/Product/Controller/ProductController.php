@@ -1,37 +1,37 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Domains\Product\Controller;
 
+use App\Domains\Product\Service\ProductService;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 use Inertia\Response;
 
-class ProductController extends Controller
+class ProductController
 {
+    public function __construct(private ProductService $products)
+    {
+    }
+
     public function home(): Response
     {
         return Inertia::render('Home', [
-            'products' => Product::all(),
+            'products' => $this->products->listAll(),
         ]);
     }
 
     public function catalog(Request $request): Response
     {
         return Inertia::render('Catalog', [
-            'products' => Product::all(),
-            'type'     => $request->query('type', 'Semua'),
+            'products' => $this->products->listAll(),
+            'type' => $request->query('type', 'Semua'),
         ]);
     }
 
     public function show(Product $product): Response
     {
-        return Inertia::render('Product', [
-            'product' => $product,
-            'related' => Product::where('type', $product->type)
-                ->where('id', '!=', $product->id)
-                ->take(3)->get(),
-        ]);
+        return Inertia::render('Product', $this->products->findWithRelated($product));
     }
 
     public function about(): Response

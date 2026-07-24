@@ -6,7 +6,6 @@ defineProps({ active: { type: String, default: 'products' } })
 
 const nav = [
   { key: 'products', label: 'Produk', href: '/admin' },
-  { key: 'orders', label: 'Pesanan', href: '/admin/pesanan' },
 ]
 
 function logout() {

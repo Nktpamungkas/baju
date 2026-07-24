@@ -1,7 +1,5 @@
 <script setup>
 import { Link } from '@inertiajs/vue3'
-import { useCart } from '@/stores/cart'
-const cart = useCart()
 defineProps({ active: { type: String, default: 'home' } }) // 'home' | 'catalog' | 'about'
 </script>
 
@@ -16,10 +14,6 @@ defineProps({ active: { type: String, default: 'home' } }) // 'home' | 'catalog'
       <Link href="/" class="text-[14px]" :class="active === 'home' ? 'text-ink' : 'text-faint'">Beranda</Link>
       <Link href="/katalog" class="text-[14px]" :class="active === 'catalog' ? 'text-ink' : 'text-faint'">Katalog</Link>
       <Link href="/tentang" class="text-[14px]" :class="active === 'about' ? 'text-ink' : 'text-faint'">Tentang</Link>
-      <Link href="/keranjang" class="relative flex items-center gap-[7px] rounded-pill bg-ink px-[17px] py-[9px] text-[13px] text-canvas">
-        Keranjang
-        <span class="inline-flex h-[19px] min-w-[19px] items-center justify-center rounded-pill px-[5px] text-[11px] font-semibold" style="background:var(--accent)">{{ cart.count }}</span>
-      </Link>
     </nav>
   </header>
 </template>
