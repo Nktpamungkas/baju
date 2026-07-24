@@ -1,0 +1,39 @@
+/* NALE — base styles. Import this once (e.g. resources/css/app.css).
+   Fonts + CSS variables mirror tailwind.config.js so you can use either. */
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --canvas: #FBFAF8;
+  --ink: #1C1A17;
+  --muted: #6E685E;
+  --faint: #A39C90;
+  --line: #ECE7DF;
+  --panel: #F6F2EB;
+  --cardbg: #EFEAE2;
+  --accent: #BA6A45;        /* swap this one value to retheme the whole site */
+  --accent-soft: #D9A88C;
+}
+
+html, body { margin: 0; padding: 0; }
+body {
+  background: var(--canvas);
+  color: var(--ink);
+  font-family: 'Hanken Grotesk', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+::selection { background: #E7D3C8; }
+
+/* Reusable recipes — keep design consistent across new pages */
+@layer components {
+  .eyebrow      { @apply text-[12px] uppercase tracking-eyebrow text-accent; }
+  .h-display    { @apply font-display font-light text-ink; }     /* add size per use */
+  .btn-primary  { @apply rounded-pill bg-ink px-7 py-[15px] text-[15px] font-medium text-canvas; }
+  .btn-ghost    { @apply rounded-pill border border-[#D9D2C7] px-6 py-[15px] text-[15px] font-medium text-ink; }
+  .chip         { @apply rounded-pill border border-[#D9D2C7] px-5 py-[9px] text-[13.5px] text-muted; }
+  .chip-active  { @apply rounded-pill bg-ink px-5 py-[9px] text-[13.5px] text-canvas; }
+  .container-nale { @apply mx-auto max-w-content px-10; }
+}

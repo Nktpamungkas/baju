@@ -1,0 +1,262 @@
+[
+  {
+    "id": "orion",
+    "name": "Orion Set",
+    "type": "Setelan",
+    "price": 99000,
+    "word": "warna",
+    "material": "Jeanswest cotton Japan · unisex",
+    "desc": "Setelan bernuansa denim dengan bahan yang justru selembut katun — adem, tidak gerah. Full kancing hidup dengan kancing kerang, dan satu kantong di bagian belakang celana.",
+    "variants": [
+      {
+        "name": "Denim",
+        "img": "/img/orion-denim.jpg"
+      },
+      {
+        "name": "Aqua",
+        "img": "/img/orion-aqua.jpg"
+      },
+      {
+        "name": "French Pink",
+        "img": "/img/orion-frenchpink.jpg"
+      },
+      {
+        "name": "Beige",
+        "img": "/img/orion-beige.jpg"
+      }
+    ],
+    "sizeCols": [
+      "Dada",
+      "Panjang",
+      "Lengan"
+    ],
+    "sizes": [
+      [
+        "S",
+        30,
+        29,
+        8
+      ],
+      [
+        "M",
+        33,
+        33,
+        9
+      ],
+      [
+        "L",
+        36,
+        37,
+        10
+      ]
+    ]
+  },
+  {
+    "id": "celana",
+    "name": "Celana Gonjreng",
+    "type": "Celana",
+    "price": 85000,
+    "word": "motif",
+    "material": "Babycanvas 100% katun · Oeko-Tex certified",
+    "desc": "Celana panjang dengan cetak Direct Printing yang menyerap sempurna ke serat kain — warna hidup, awet, tidak luntur, dan tetap adem. Dua kantong di bagian belakang. Tinta tersertifikasi Oeko-Tex Standard 100, 100% aman untuk bayi & anak.",
+    "variants": [
+      {
+        "name": "Smiling Starry",
+        "img": "/img/celana-smilingstarry.jpg"
+      },
+      {
+        "name": "Sun Checker",
+        "img": "/img/celana-sunchecker.jpg"
+      },
+      {
+        "name": "Little Nebula",
+        "img": "/img/celana-littlenebula.jpg"
+      },
+      {
+        "name": "Sunny Crabby",
+        "img": "/img/celana-sunnycrabby.jpg"
+      }
+    ],
+    "sizeCols": [
+      "Pinggang",
+      "Panjang",
+      "Inseam"
+    ],
+    "sizes": [
+      [
+        "S",
+        20,
+        47,
+        22
+      ],
+      [
+        "M",
+        21,
+        52,
+        24
+      ],
+      [
+        "L",
+        22,
+        56,
+        26
+      ]
+    ]
+  },
+  {
+    "id": "irina",
+    "name": "Irina Dress",
+    "type": "Dress",
+    "price": 95000,
+    "word": "warna",
+    "material": "100% cotton muslin · handmade embroidery",
+    "desc": "Dress muslin lembut dengan motif bunga kecil yang disulam langsung dengan tangan di bagian dada. Bagian bawah dihias aksen renda putih yang mempercantik keseluruhan tampilan.",
+    "variants": [
+      {
+        "name": "Rosewood",
+        "img": "/img/irina-rosewood.jpg"
+      },
+      {
+        "name": "Midnight Green",
+        "img": "/img/irina-midnightgreen.jpg"
+      },
+      {
+        "name": "Walnut",
+        "img": "/img/irina-walnut.jpg"
+      },
+      {
+        "name": "Night Blue",
+        "img": "/img/irina-nightblue.jpg"
+      }
+    ],
+    "sizeCols": [
+      "Dada",
+      "Panjang",
+      "Lengan"
+    ],
+    "sizes": [
+      [
+        "S",
+        29,
+        30,
+        10
+      ],
+      [
+        "M",
+        32,
+        33,
+        11
+      ],
+      [
+        "L",
+        34,
+        35,
+        12
+      ]
+    ]
+  },
+  {
+    "id": "koko",
+    "name": "Koko Set",
+    "type": "Setelan",
+    "price": 99000,
+    "word": "warna",
+    "material": "Linen 100% katun · kancing kayu premium",
+    "desc": "Setelan koko berbahan linen katun yang adem dan ringan. Full kancing hidup dengan kancing kayu premium, dilengkapi dua kantong hidup di bagian depan.",
+    "variants": [
+      {
+        "name": "Olive Green",
+        "img": "/img/koko-olivegreen.jpg"
+      },
+      {
+        "name": "Tan",
+        "img": "/img/koko-tan.jpg"
+      },
+      {
+        "name": "Iron Gray",
+        "img": "/img/koko-irongray.jpg"
+      },
+      {
+        "name": "Sand",
+        "img": "/img/koko-sand.jpg"
+      }
+    ],
+    "sizeCols": [
+      "Dada",
+      "Panjang",
+      "Lengan"
+    ],
+    "sizes": [
+      [
+        "S",
+        35,
+        31,
+        11
+      ],
+      [
+        "M",
+        37,
+        33,
+        12
+      ],
+      [
+        "L",
+        39,
+        35,
+        13
+      ]
+    ]
+  },
+  {
+    "id": "tracy",
+    "name": "Tracy",
+    "type": "Atasan",
+    "price": 89000,
+    "word": "warna",
+    "material": "100% cotton muslin · renda rajut",
+    "desc": "Atasan muslin dengan kerah lebar dan renda rajut sebagai pemanis di bagian depan. Ada bukaan di belakang leher agar mudah saat memasukkan kepala anak.",
+    "variants": [
+      {
+        "name": "Opera Mauve",
+        "img": "/img/tracy-operamauve.jpg"
+      },
+      {
+        "name": "Moss Green",
+        "img": "/img/tracy-mossgreen.jpg"
+      },
+      {
+        "name": "Cocoa",
+        "img": "/img/tracy-cocoa.jpg"
+      },
+      {
+        "name": "Light Blue",
+        "img": "/img/tracy-lightblue.jpg"
+      }
+    ],
+    "sizeCols": [
+      "Dada",
+      "Panjang",
+      "Lengan"
+    ],
+    "sizes": [
+      [
+        "S",
+        30,
+        31,
+        21
+      ],
+      [
+        "M",
+        33,
+        34,
+        26
+      ],
+      [
+        "L",
+        35,
+        38,
+        29
+      ]
+    ]
+  }
+]
