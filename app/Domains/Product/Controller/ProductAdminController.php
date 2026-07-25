@@ -47,7 +47,7 @@ class ProductAdminController
     // Upload satu foto varian → simpan ke public/img → balikan URL.
     public function upload(Request $request): JsonResponse
     {
-        $request->validate(['photo' => 'required|image|max:6144']);
+        $request->validate(['photo' => 'required|image|max:10240']);
 
         return response()->json([
             'url' => $this->products->storeUploadedPhoto($request->file('photo')),

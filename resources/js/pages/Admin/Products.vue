@@ -35,7 +35,7 @@ async function uploadVariant(i, e) {
     const { data } = await axios.post('/admin/upload', fd)
     draft.value.variants[i].img = data.url
   } catch (err) {
-    alert('Gagal unggah foto. Pastikan file gambar < 6MB.')
+    alert('Gagal unggah foto. Pastikan file gambar < 10MB.')
   }
 }
 
