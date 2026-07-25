@@ -25,7 +25,6 @@ function submit() {
         <div v-if="form.errors.password" class="mt-2 text-[12.5px] text-accent">{{ form.errors.password }}</div>
         <button type="submit" :disabled="form.processing"
           class="btn-primary mt-5 w-full disabled:opacity-60">Masuk</button>
-        <p class="mt-4 text-center text-[12px] text-faint">Default: <code>nale123</code> — ubah di <code>.env</code></p>
       </form>
     </div>
   </div>
