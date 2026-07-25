@@ -26,12 +26,5 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::put('produk/{product}', [ProductAdminController::class, 'update'])->name('products.update');
         Route::delete('produk/{product}', [ProductAdminController::class, 'destroy'])->name('products.destroy');
         Route::post('upload', [ProductAdminController::class, 'upload'])->name('upload');
-
-        Route::get('logs', function () {
-            $path = storage_path('logs/laravel.log');
-            $content = file_exists($path) ? file_get_contents($path) : '(kosong)';
-
-            return response(e(substr($content, -20000)))->header('Content-Type', 'text/plain');
-        })->name('logs');
     });
 });
