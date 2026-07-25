@@ -6,7 +6,8 @@ import { Link } from '@inertiajs/vue3'
   <footer class="border-t border-line bg-panel">
     <div class="container-nale grid grid-cols-[1.4fr_1fr_1fr_1fr] gap-8 py-[54px] pb-[30px]">
       <div>
-        <div class="font-display text-[24px] tracking-[0.16em]">NALE</div>
+        <img src="/img/mascot.png" alt="Maskot NALE" class="h-16 w-16 object-contain" />
+        <div class="mt-2 font-display text-[24px] tracking-[0.16em]">NALE</div>
         <p class="mt-3 max-w-[240px] text-[13.5px] leading-[1.6] text-faint">Pakaian anak yang tenang, nyaman, dan dibuat untuk tumbuh bersama mereka.</p>
       </div>
       <div>
