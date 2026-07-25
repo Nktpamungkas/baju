@@ -71,10 +71,7 @@ const typeCards = computed(() =>
           </div>
           <div class="relative">
             <div class="grid grid-cols-2 grid-rows-2 gap-2.5">
-              <img src="/img/orion-denim.jpg" alt="Orion Set" class="aspect-square w-full rounded-lg2 object-cover" />
-              <img src="/img/irina-rosewood.jpg" alt="Irina Dress" class="aspect-square w-full rounded-lg2 object-cover" />
-              <img src="/img/celana-sunnycrabby.jpg" alt="Celana Gonjreng" class="aspect-square w-full rounded-lg2 object-cover" />
-              <img src="/img/koko-olivegreen.jpg" alt="Koko Set" class="aspect-square w-full rounded-lg2 object-cover" />
+              <img v-for="p in featured" :key="p.id" :src="p.variants[0].img" :alt="p.name" class="aspect-square w-full rounded-lg2 object-cover" />
             </div>
             <div class="absolute -bottom-3.5 -left-3.5 rounded-lg2 bg-canvas px-4 py-[11px]" style="box-shadow:0 8px 28px rgba(28,26,23,.1)">
               <div class="text-[12px] tracking-[0.04em] text-faint">Mulai dari</div>
