@@ -5,4 +5,7 @@ npm run build
 git add -A
 git commit -m "${1:-deploy}"
 git push
-echo "Selesai. Di STB tinggal: git pull && systemctl restart baju.service"
+
+echo "Push selesai. Update STB..."
+ssh root@arm-nale "cd /opt/baju && git pull && composer install --no-dev --optimize-autoloader --ignore-platform-reqs && systemctl restart baju.service"
+echo "Selesai, STB udah update."
