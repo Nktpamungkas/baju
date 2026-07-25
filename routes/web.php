@@ -26,20 +26,5 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::put('produk/{product}', [ProductAdminController::class, 'update'])->name('products.update');
         Route::delete('produk/{product}', [ProductAdminController::class, 'destroy'])->name('products.destroy');
         Route::post('upload', [ProductAdminController::class, 'upload'])->name('upload');
-
-        // TODO: hapus setelah debug upload selesai
-        Route::get('debug-tmp', function () {
-            $dir = sys_get_temp_dir();
-            $testFile = $dir.'/nale-write-test-'.uniqid();
-            $canWrite = @file_put_contents($testFile, 'test') !== false;
-            @unlink($testFile);
-
-            return response()->json([
-                'upload_tmp_dir_ini' => ini_get('upload_tmp_dir') ?: '(kosong, pakai default OS)',
-                'sys_get_temp_dir' => $dir,
-                'is_writable' => is_writable($dir),
-                'actual_write_test' => $canWrite,
-            ]);
-        });
     });
 });
