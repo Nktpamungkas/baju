@@ -1,0 +1,136 @@
+{
+  "_AppFooter-CIgLowZo.js": {
+    "file": "assets/AppFooter-CIgLowZo.js",
+    "name": "AppFooter",
+    "imports": [
+      "resources/js/app.js"
+    ]
+  },
+  "_AppHeader-Mwjzm6ti.js": {
+    "file": "assets/AppHeader-Mwjzm6ti.js",
+    "name": "AppHeader",
+    "imports": [
+      "resources/js/app.js"
+    ]
+  },
+  "_ProductCard-BLAMsMSv.js": {
+    "file": "assets/ProductCard-BLAMsMSv.js",
+    "name": "ProductCard",
+    "imports": [
+      "resources/js/app.js",
+      "_format-plPf0Vj5.js"
+    ]
+  },
+  "_format-plPf0Vj5.js": {
+    "file": "assets/format-plPf0Vj5.js",
+    "name": "format"
+  },
+  "resources/css/app.css": {
+    "file": "assets/app-BPDWKHAJ.css",
+    "src": "resources/css/app.css",
+    "isEntry": true
+  },
+  "resources/js/app.js": {
+    "file": "assets/app-DlhjkC0R.js",
+    "name": "app",
+    "src": "resources/js/app.js",
+    "isEntry": true,
+    "dynamicImports": [
+      "resources/js/pages/About.vue",
+      "resources/js/pages/Admin/Login.vue",
+      "resources/js/pages/Admin/Products.vue",
+      "resources/js/pages/Catalog.vue",
+      "resources/js/pages/Home.vue",
+      "resources/js/pages/Product.vue"
+    ],
+    "css": [
+      "assets/app-BPDWKHAJ.css"
+    ]
+  },
+  "resources/js/pages/About.vue": {
+    "file": "assets/About-CeeHl0AB.js",
+    "name": "About",
+    "src": "resources/js/pages/About.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js",
+      "_AppHeader-Mwjzm6ti.js",
+      "_AppFooter-CIgLowZo.js"
+    ],
+    "css": [
+      "assets/app-BPDWKHAJ.css"
+    ]
+  },
+  "resources/js/pages/Admin/Login.vue": {
+    "file": "assets/Login-Dz7LS64X.js",
+    "name": "Login",
+    "src": "resources/js/pages/Admin/Login.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js"
+    ],
+    "css": [
+      "assets/app-BPDWKHAJ.css"
+    ]
+  },
+  "resources/js/pages/Admin/Products.vue": {
+    "file": "assets/Products-D5vwPkv4.js",
+    "name": "Products",
+    "src": "resources/js/pages/Admin/Products.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js",
+      "_format-plPf0Vj5.js"
+    ],
+    "css": [
+      "assets/app-BPDWKHAJ.css"
+    ]
+  },
+  "resources/js/pages/Catalog.vue": {
+    "file": "assets/Catalog-qgDV7K1o.js",
+    "name": "Catalog",
+    "src": "resources/js/pages/Catalog.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_AppHeader-Mwjzm6ti.js",
+      "_AppFooter-CIgLowZo.js",
+      "_ProductCard-BLAMsMSv.js",
+      "resources/js/app.js",
+      "_format-plPf0Vj5.js"
+    ],
+    "css": [
+      "assets/app-BPDWKHAJ.css"
+    ]
+  },
+  "resources/js/pages/Home.vue": {
+    "file": "assets/Home-QCRd6W72.js",
+    "name": "Home",
+    "src": "resources/js/pages/Home.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js",
+      "_AppHeader-Mwjzm6ti.js",
+      "_AppFooter-CIgLowZo.js",
+      "_ProductCard-BLAMsMSv.js",
+      "_format-plPf0Vj5.js"
+    ],
+    "css": [
+      "assets/app-BPDWKHAJ.css"
+    ]
+  },
+  "resources/js/pages/Product.vue": {
+    "file": "assets/Product-B3tYeelD.js",
+    "name": "Product",
+    "src": "resources/js/pages/Product.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js",
+      "_AppHeader-Mwjzm6ti.js",
+      "_ProductCard-BLAMsMSv.js",
+      "_format-plPf0Vj5.js"
+    ],
+    "css": [
+      "assets/app-BPDWKHAJ.css"
+    ]
+  }
+}

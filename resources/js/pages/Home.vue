@@ -19,18 +19,13 @@ const featured = computed(() => props.products.slice(0, 4))
 const minPrice = computed(() => Math.min(...props.products.map((p) => p.price)))
 const storyFeatures = computed(() => props.products.slice(0, 2))
 
-const TYPE_IMG = {
-  Setelan: '/img/koko-olivegreen.jpg',
-  Dress: '/img/irina-rosewood.jpg',
-  Atasan: '/img/tracy-operamauve.jpg',
-  Celana: '/img/celana-sunnycrabby.jpg',
-}
 const typeCards = computed(() =>
-  ['Setelan', 'Dress', 'Atasan', 'Celana'].map((t) => ({
-    label: t,
-    img: TYPE_IMG[t],
-    count: props.products.filter((p) => p.type === t).length,
-  }))
+  ['Setelan', 'Dress', 'Atasan', 'Celana']
+    .map((t) => {
+      const matches = props.products.filter((p) => p.type === t)
+      return { label: t, img: matches[0]?.variants[0]?.img, count: matches.length }
+    })
+    .filter((c) => c.img)
 )
 </script>
 
