@@ -10,6 +10,13 @@ Route::get('/katalog', [ProductController::class, 'catalog'])->name('catalog');
 Route::get('/produk/{product}', [ProductController::class, 'show'])->name('product');
 Route::get('/tentang', [ProductController::class, 'about'])->name('about');
 
+// TODO: hapus setelah debug upload selesai
+Route::get('/debug-ini', fn () => response()->json([
+    'upload_max_filesize' => ini_get('upload_max_filesize'),
+    'post_max_size' => ini_get('post_max_size'),
+    'memory_limit' => ini_get('memory_limit'),
+]));
+
 /*
 |--- Admin ---------------------------------------------------------------
 | Login sederhana (password di .env: ADMIN_PASSWORD). Checkout selalu lewat
