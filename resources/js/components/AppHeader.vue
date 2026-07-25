@@ -6,7 +6,7 @@ defineProps({ active: { type: String, default: 'home' } }) // 'home' | 'catalog'
 <template>
   <header class="sticky top-0 z-50 flex items-center justify-between border-b border-line px-10 py-[18px] backdrop-blur-md" style="background:rgba(251,250,248,.82)">
     <Link href="/" class="flex items-center gap-2">
-      <img src="/img/mascot.png" alt="" class="h-16 w-16 object-contain" />
+      <img src="/img/mascot-small.png" alt="" class="h-16 w-16 object-contain" />
       <span class="flex flex-col items-start gap-px">
         <span class="font-display text-[26px] leading-none tracking-[0.16em] text-ink">NALE</span>
         <span class="ml-0.5 text-[9px] uppercase tracking-[0.32em] text-faint">Baju Anak</span>
