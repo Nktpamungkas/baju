@@ -10,13 +10,6 @@ Route::get('/katalog', [ProductController::class, 'catalog'])->name('catalog');
 Route::get('/produk/{product}', [ProductController::class, 'show'])->name('product');
 Route::get('/tentang', [ProductController::class, 'about'])->name('about');
 
-// TODO: hapus setelah debug upload selesai
-Route::get('/debug-ini', fn () => response()->json([
-    'upload_max_filesize' => ini_get('upload_max_filesize'),
-    'post_max_size' => ini_get('post_max_size'),
-    'memory_limit' => ini_get('memory_limit'),
-]));
-
 /*
 |--- Admin ---------------------------------------------------------------
 | Login sederhana (password di .env: ADMIN_PASSWORD). Checkout selalu lewat
@@ -33,5 +26,12 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::put('produk/{product}', [ProductAdminController::class, 'update'])->name('products.update');
         Route::delete('produk/{product}', [ProductAdminController::class, 'destroy'])->name('products.destroy');
         Route::post('upload', [ProductAdminController::class, 'upload'])->name('upload');
+
+        Route::get('logs', function () {
+            $path = storage_path('logs/laravel.log');
+            $content = file_exists($path) ? file_get_contents($path) : '(kosong)';
+
+            return response(e(substr($content, -20000)))->header('Content-Type', 'text/plain');
+        })->name('logs');
     });
 });
