@@ -7,5 +7,5 @@ git commit -m "${1:-deploy}"
 git push
 
 echo "Push selesai. Update STB..."
-ssh root@arm-nale "cd /opt/baju && git pull && composer install --no-dev --optimize-autoloader --ignore-platform-reqs && systemctl restart baju.service"
+ssh root@arm-nale "cd /opt/baju && git pull && (composer install --no-dev --optimize-autoloader --ignore-platform-reqs || true) && php artisan package:discover --ansi && systemctl restart baju.service"
 echo "Selesai, STB udah update."
