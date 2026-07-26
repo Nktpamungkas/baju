@@ -29,7 +29,7 @@ const currentVariant = computed(() => props.product.variants[varIdx.value])
         <button class="text-[13.5px] tracking-[0.02em] text-muted" @click="router.visit('/katalog')">← Kembali ke katalog</button>
       </section>
 
-      <section class="container-nale grid grid-cols-2 items-start gap-14 py-6 pb-14">
+      <section class="container-nale grid grid-cols-1 items-start gap-8 py-6 pb-10 md:grid-cols-2 md:gap-14 md:pb-14">
         <!-- Gallery -->
         <div>
           <div class="aspect-[4/5] overflow-hidden rounded-lg2 bg-cardbg">
@@ -38,7 +38,7 @@ const currentVariant = computed(() => props.product.variants[varIdx.value])
           <div class="mt-3 flex gap-2.5">
             <button
               v-for="(v, i) in product.variants" :key="v.name"
-              class="h-20 w-[66px] overflow-hidden rounded-card border-2 bg-cardbg"
+              class="h-16 w-[54px] flex-shrink-0 overflow-hidden rounded-card border-2 bg-cardbg md:h-20 md:w-[66px]"
               :style="{ borderColor: i === varIdx ? '#1C1A17' : 'transparent' }"
               @click="varIdx = i">
               <img :src="v.img" :alt="v.name" class="h-full w-full object-cover" />
@@ -47,9 +47,9 @@ const currentVariant = computed(() => props.product.variants[varIdx.value])
         </div>
 
         <!-- Info -->
-        <div class="pt-1.5">
+        <div class="md:pt-1.5">
           <span class="eyebrow">{{ product.type }}</span>
-          <h1 class="h-display mt-3 text-[44px] leading-[1.06]">{{ product.name }}</h1>
+          <h1 class="h-display mt-3 text-[28px] leading-[1.1] md:text-[44px] md:leading-[1.06]">{{ product.name }}</h1>
           <div class="mt-3.5 font-display text-[26px] text-ink">{{ rp(product.price) }}</div>
           <p class="mt-5 text-[16px] leading-[1.65] text-muted">{{ product.desc }}</p>
 
@@ -80,21 +80,21 @@ const currentVariant = computed(() => props.product.variants[varIdx.value])
 
           <!-- Size table -->
           <div class="mt-[30px] overflow-hidden rounded-lg2 border border-line">
-            <div class="grid grid-cols-4 bg-panel px-4 py-[11px] text-[11px] uppercase tracking-[0.08em] text-faint">
+            <div class="grid grid-cols-4 gap-1 bg-panel px-3 py-[11px] text-[10px] uppercase tracking-[0.04em] text-faint md:gap-2 md:px-4 md:text-[11px] md:tracking-[0.08em]">
               <span>Ukuran</span><span>{{ product.sizeCols[0] }}</span><span>{{ product.sizeCols[1] }}</span><span>{{ product.sizeCols[2] }}</span>
             </div>
-            <div v-for="row in product.sizes" :key="row[0]" class="grid grid-cols-4 border-t border-[#F0EBE2] px-4 py-2.5 text-[13.5px] text-[#3A372F]">
+            <div v-for="row in product.sizes" :key="row[0]" class="grid grid-cols-4 gap-1 border-t border-[#F0EBE2] px-3 py-2.5 text-[12.5px] text-[#3A372F] md:gap-2 md:px-4 md:text-[13.5px]">
               <span class="font-medium text-ink">{{ row[0] }}</span><span>{{ row[1] }}</span><span>{{ row[2] }}</span><span>{{ row[3] }}</span>
             </div>
-            <div class="border-t border-[#F0EBE2] px-4 py-2.5 text-[11.5px] text-faint">Ukuran dalam cm · selisih 1–2 cm karena pengukuran manual.</div>
+            <div class="border-t border-[#F0EBE2] px-3 py-2.5 text-[11px] text-faint md:px-4 md:text-[11.5px]">Ukuran dalam cm · selisih 1–2 cm karena pengukuran manual.</div>
           </div>
         </div>
       </section>
 
       <!-- Related -->
-      <section v-if="related.length" class="container-nale pb-[90px] pt-2">
-        <h3 class="h-display mb-6 text-[28px]">Mungkin cocok juga</h3>
-        <div class="grid grid-cols-3 gap-[22px]">
+      <section v-if="related.length" class="container-nale pb-16 pt-2 md:pb-[90px]">
+        <h3 class="h-display mb-5 text-[22px] md:mb-6 md:text-[28px]">Mungkin cocok juga</h3>
+        <div class="grid grid-cols-2 gap-4 md:grid-cols-3 md:gap-[22px]">
           <ProductCard v-for="p in related" :key="p.id" :product="p" />
         </div>
       </section>

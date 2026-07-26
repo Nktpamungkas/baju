@@ -58,33 +58,37 @@ const today = new Date().toLocaleDateString('id-ID', { weekday: 'long', day: 'nu
 
 <template>
   <AdminLayout active="products">
-    <header class="sticky top-0 z-20 flex items-center justify-between border-b px-[34px] py-5" style="background:rgba(243,239,232,.85);backdrop-filter:blur(12px);border-color:#E2DBCF">
+    <header class="sticky top-0 z-20 flex flex-col gap-3 border-b px-4 py-4 md:flex-row md:items-center md:justify-between md:px-[34px] md:py-5" style="background:rgba(243,239,232,.85);backdrop-filter:blur(12px);border-color:#E2DBCF">
       <div>
-        <h1 class="m-0 font-display text-[28px] font-light leading-none">Produk</h1>
-        <span class="text-[13px] text-faint">{{ products.length }} produk aktif · pesanan via marketplace</span>
+        <h1 class="m-0 font-display text-[22px] font-light leading-none md:text-[28px]">Produk</h1>
+        <span class="text-[12.5px] text-faint md:text-[13px]">{{ products.length }} produk aktif · pesanan via marketplace</span>
       </div>
       <div class="flex items-center gap-3">
-        <span class="text-[12.5px] text-faint">{{ today }}</span>
+        <span class="hidden text-[12.5px] text-faint md:inline">{{ today }}</span>
         <button class="flex items-center gap-[7px] rounded-pill bg-ink px-[18px] py-2.5 text-[13.5px] font-medium text-panel" @click="openAdd">+ Tambah Produk</button>
       </div>
     </header>
 
-    <div class="px-[34px] pb-[60px] pt-[30px]">
+    <div class="px-4 pb-10 pt-5 md:px-[34px] md:pb-[60px] md:pt-[30px]">
       <div class="overflow-hidden rounded-[12px] border bg-canvas" style="border-color:#E9E3D9">
-        <div class="grid gap-4 bg-panel px-[22px] py-3.5 text-[11.5px] uppercase tracking-[0.06em] text-faint" style="grid-template-columns:2.4fr .9fr .9fr 1fr 1.1fr 1fr">
+        <div class="hidden gap-4 bg-panel px-[22px] py-3.5 text-[11.5px] uppercase tracking-[0.06em] text-faint md:grid md:[grid-template-columns:2.4fr_.9fr_.9fr_1fr_1.1fr_1fr]">
           <span>Produk</span><span>Kategori</span><span>Harga</span><span>Varian</span><span>Marketplace</span><span class="text-right">Aksi</span>
         </div>
-        <div v-for="p in products" :key="p.id" class="grid items-center gap-4 border-t px-[22px] py-3.5" style="grid-template-columns:2.4fr .9fr .9fr 1fr 1.1fr 1fr;border-color:#F0EBE2">
-          <div class="flex min-w-0 items-center gap-[13px]">
-            <img :src="(p.variants[0] || {}).img" :alt="p.name" class="h-[54px] w-[44px] rounded-card bg-cardbg object-cover" />
-            <div class="min-w-0">
-              <div class="text-[14.5px]">{{ p.name }}</div>
+        <div v-for="p in products" :key="p.id" class="flex flex-col gap-3 border-t p-4 md:grid md:items-center md:gap-4 md:px-[22px] md:py-3.5 md:[grid-template-columns:2.4fr_.9fr_.9fr_1fr_1.1fr_1fr]" style="border-color:#F0EBE2">
+          <div class="flex min-w-0 items-center gap-3">
+            <img :src="(p.variants[0] || {}).img" :alt="p.name" class="h-12 w-10 flex-shrink-0 rounded-card bg-cardbg object-cover md:h-[54px] md:w-[44px]" />
+            <div class="min-w-0 flex-1">
+              <div class="text-[14px] md:text-[14.5px]">{{ p.name }}</div>
               <div class="truncate text-[12px] text-faint">{{ p.material }}</div>
             </div>
+            <div class="text-right md:hidden">
+              <div class="text-[13.5px]">{{ rp(p.price) }}</div>
+              <div class="text-[12px] text-muted">{{ p.type }}</div>
+            </div>
           </div>
-          <span class="text-[13.5px] text-muted">{{ p.type }}</span>
-          <span class="text-[13.5px]">{{ rp(p.price) }}</span>
-          <div class="flex gap-[5px]">
+          <span class="hidden text-[13.5px] text-muted md:inline">{{ p.type }}</span>
+          <span class="hidden text-[13.5px] md:inline">{{ rp(p.price) }}</span>
+          <div class="flex items-center gap-[5px]">
             <span v-for="(w, i) in p.variants.slice(0, 4)" :key="i" :title="w.name" class="h-4 w-4 overflow-hidden rounded-pill border" style="border-color:#E2DBCF">
               <img :src="w.img" class="h-full w-full object-cover" />
             </span>
@@ -106,17 +110,17 @@ const today = new Date().toLocaleDateString('id-ID', { weekday: 'long', day: 'nu
     </div>
 
     <!-- MODAL -->
-    <div v-if="modal" class="fixed inset-0 z-[60] flex items-start justify-center overflow-auto px-5 py-11" style="background:rgba(28,26,23,.42);backdrop-filter:blur(3px)">
+    <div v-if="modal" class="fixed inset-0 z-[60] flex items-start justify-center overflow-auto px-3 py-6 md:px-5 md:py-11" style="background:rgba(28,26,23,.42);backdrop-filter:blur(3px)">
       <div class="w-full max-w-[620px] rounded-[14px] bg-canvas" style="box-shadow:0 24px 60px rgba(28,26,23,.28)">
-        <div class="flex items-center justify-between border-b px-[26px] py-5" style="border-color:#EFE9DE">
-          <h2 class="m-0 font-display text-[21px] font-normal">{{ isNew ? 'Tambah Produk' : 'Edit Produk' }}</h2>
+        <div class="flex items-center justify-between border-b px-5 py-4 md:px-[26px] md:py-5" style="border-color:#EFE9DE">
+          <h2 class="m-0 font-display text-[19px] font-normal md:text-[21px]">{{ isNew ? 'Tambah Produk' : 'Edit Produk' }}</h2>
           <button class="text-[22px] leading-none text-faint" @click="close">×</button>
         </div>
 
-        <div class="flex flex-col gap-4 px-[26px] py-6">
+        <div class="flex flex-col gap-4 px-5 py-5 md:px-[26px] md:py-6">
           <label class="flex flex-col gap-1.5"><span class="text-[12.5px] text-muted">Nama Produk</span>
             <input v-model="draft.name" class="rounded-lg2 border px-3.5 py-2.5 text-[14px]" style="border-color:#DDD5C9;background:#fff" /></label>
-          <div class="grid grid-cols-2 gap-3.5">
+          <div class="grid grid-cols-1 gap-3.5 md:grid-cols-2">
             <label class="flex flex-col gap-1.5"><span class="text-[12.5px] text-muted">Kategori</span>
               <select v-model="draft.type" class="rounded-lg2 border px-3.5 py-2.5 text-[14px]" style="border-color:#DDD5C9;background:#fff">
                 <option v-for="t in TYPES" :key="t" :value="t">{{ t }}</option>
@@ -126,7 +130,7 @@ const today = new Date().toLocaleDateString('id-ID', { weekday: 'long', day: 'nu
           </div>
           <label class="flex flex-col gap-1.5"><span class="text-[12.5px] text-muted">Material</span>
             <input v-model="draft.material" class="rounded-lg2 border px-3.5 py-2.5 text-[14px]" style="border-color:#DDD5C9;background:#fff" /></label>
-          <div class="grid grid-cols-2 gap-3.5">
+          <div class="grid grid-cols-1 gap-3.5 md:grid-cols-2">
             <label class="flex flex-col gap-1.5"><span class="text-[12.5px] text-muted">Link Shopee</span>
               <input v-model="draft.shopee" placeholder="https://shopee.co.id/..." class="rounded-lg2 border px-3.5 py-2.5 text-[14px]" style="border-color:#DDD5C9;background:#fff" /></label>
             <label class="flex flex-col gap-1.5"><span class="text-[12.5px] text-muted">Link Tokopedia</span>

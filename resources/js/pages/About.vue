@@ -15,18 +15,18 @@ const values = [
     <AppHeader active="about" />
 
     <main>
-      <section class="container-nale grid grid-cols-[1.05fr_0.95fr] items-center gap-14 py-16">
+      <section class="container-nale grid grid-cols-1 gap-8 py-10 md:grid-cols-[1.05fr_0.95fr] md:items-center md:gap-14 md:py-16">
         <div>
           <span class="eyebrow">Tentang NALE</span>
-          <h1 class="h-display mt-[18px] text-[54px] leading-[1.05] tracking-[-0.01em]">
+          <h1 class="h-display mt-[18px] text-[32px] leading-[1.1] tracking-[-0.01em] md:text-[54px] md:leading-[1.05]">
             Dibuat <em class="italic text-accent">tenang</em>, untuk tumbuh bersama.
           </h1>
-          <p class="mt-6 max-w-[440px] text-[17px] leading-[1.6] text-muted">
+          <p class="mt-5 max-w-[440px] text-[15px] leading-[1.6] text-muted md:mt-6 md:text-[17px]">
             NALE lahir dari keinginan sederhana: pakaian anak yang nyaman, berbahan baik,
             dan berwarna tenang — bukan sekadar ramai. Kami memilih material yang adem,
             pewarna yang aman, dan jahitan yang rapi supaya setiap potong bisa dipakai lama.
           </p>
-          <div class="mt-[34px] flex gap-3.5">
+          <div class="mt-7 flex gap-3.5 md:mt-[34px]">
             <button class="btn-primary" @click="router.visit('/katalog')">Lihat Koleksi</button>
           </div>
         </div>
@@ -39,17 +39,17 @@ const values = [
       </section>
 
       <div class="border-y border-line bg-panel">
-        <div class="container-nale grid grid-cols-3 gap-10 py-14">
+        <div class="container-nale grid grid-cols-1 gap-6 py-9 md:grid-cols-3 md:gap-10 md:py-14">
           <div v-for="v in values" :key="v.t">
-            <div class="font-display text-[22px] text-ink">{{ v.t }}</div>
-            <p class="mt-2.5 text-[14.5px] leading-[1.6] text-muted">{{ v.d }}</p>
+            <div class="font-display text-[20px] text-ink md:text-[22px]">{{ v.t }}</div>
+            <p class="mt-2.5 text-[14px] leading-[1.6] text-muted md:text-[14.5px]">{{ v.d }}</p>
           </div>
         </div>
       </div>
 
-      <section class="container-nale py-[72px] text-center">
+      <section class="container-nale py-12 text-center md:py-[72px]">
         <span class="eyebrow">Filosofi</span>
-        <p class="mx-auto mt-5 max-w-[680px] font-display text-[28px] font-light leading-[1.5] text-ink">
+        <p class="mx-auto mt-5 max-w-[680px] font-display text-[19px] font-light leading-[1.5] text-ink md:text-[28px]">
           Anak tumbuh cepat. Pakaian mereka sebaiknya menemani masa itu dengan nyaman,
           bukan menjadi beban — sederhana, bersih, dan menyenangkan dipakai.
         </p>

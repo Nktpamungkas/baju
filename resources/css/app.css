@@ -35,5 +35,5 @@ body {
   .btn-ghost    { @apply rounded-pill border border-[#D9D2C7] px-6 py-[15px] text-[15px] font-medium text-ink; }
   .chip         { @apply rounded-pill border border-[#D9D2C7] px-5 py-[9px] text-[13.5px] text-muted; }
   .chip-active  { @apply rounded-pill bg-ink px-5 py-[9px] text-[13.5px] text-canvas; }
-  .container-nale { @apply mx-auto max-w-content px-10; }
+  .container-nale { @apply mx-auto max-w-content px-5 md:px-10; }
 }

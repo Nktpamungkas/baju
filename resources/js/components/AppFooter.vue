@@ -4,8 +4,8 @@ import { Link } from '@inertiajs/vue3'
 
 <template>
   <footer class="border-t border-line bg-panel">
-    <div class="container-nale grid grid-cols-[1.4fr_1fr_1fr_1fr] gap-8 py-[54px] pb-[30px]">
-      <div>
+    <div class="container-nale grid grid-cols-2 gap-8 py-9 pb-[30px] md:grid-cols-[1.4fr_1fr_1fr_1fr] md:py-[54px]">
+      <div class="col-span-2 md:col-span-1">
         <div class="font-display text-[24px] tracking-[0.16em]">NALE</div>
         <p class="mt-3 max-w-[240px] text-[13.5px] leading-[1.6] text-faint">Pakaian anak yang tenang, nyaman, dan dibuat untuk tumbuh bersama mereka.</p>
       </div>
@@ -31,7 +31,7 @@ import { Link } from '@inertiajs/vue3'
         </div>
       </div>
     </div>
-    <div class="container-nale flex justify-between border-t border-[#E7E1D7] py-[18px] text-[12px] text-faint">
+    <div class="container-nale flex flex-col gap-1.5 border-t border-[#E7E1D7] py-[18px] text-[12px] text-faint md:flex-row md:justify-between md:gap-0">
       <span>© 2026 NALE. Dibuat dengan tenang.</span>
       <span>Bahasa Indonesia · Rp IDR</span>
     </div>
