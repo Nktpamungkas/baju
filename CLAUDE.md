@@ -58,3 +58,9 @@ Kolom penting di tabel `products` (lihat `database/migrations/2024_01_01_000000_
 ## Repo
 
 Repo publik personal di `github.com/Nktpamungkas/baju` (akun pribadi, bukan akun/org perusahaan tempat user bekerja).
+
+## Git & Deploy
+
+- **Jangan `git push` atas inisiatif sendiri.** User yang akan `git commit`/`push` sendiri (lewat terminal atau `./deploy.sh`). Kalau ada perubahan kode yang perlu di-deploy, cukup beri tahu user apa yang berubah dan biarkan mereka yang push — jangan push duluan tanpa diminta eksplisit.
+- Deploy ke STB (`/opt/baju`, dijalankan via FrankenPHP + Cloudflare Tunnel) sudah otomatis lewat GitHub Actions (`.github/workflows/deploy.yml`) begitu ada push ke `main` — jadi `git push` biasa (lewat terminal atau GUI VSCode) sudah cukup, tidak perlu SSH manual lagi.
+- `deploy.sh` di root project adalah shortcut manual (build + commit + push + SSH deploy sekaligus) kalau user mau trigger dari satu command tanpa nunggu CI — tapi ini juga harus dijalankan oleh user sendiri, bukan oleh Claude.
