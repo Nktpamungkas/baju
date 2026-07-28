@@ -1,20 +1,20 @@
 {
-  "_AppFooter-lTDGTE-h.js": {
-    "file": "assets/AppFooter-lTDGTE-h.js",
+  "_AppFooter-6VxO4QNC.js": {
+    "file": "assets/AppFooter-6VxO4QNC.js",
     "name": "AppFooter",
     "imports": [
       "resources/js/app.js"
     ]
   },
-  "_AppHeader-BPAIoSvZ.js": {
-    "file": "assets/AppHeader-BPAIoSvZ.js",
+  "_AppHeader-BGo-MeR4.js": {
+    "file": "assets/AppHeader-BGo-MeR4.js",
     "name": "AppHeader",
     "imports": [
       "resources/js/app.js"
     ]
   },
-  "_ProductCard-DaVPm11Q.js": {
-    "file": "assets/ProductCard-DaVPm11Q.js",
+  "_ProductCard-DDHkNd_B.js": {
+    "file": "assets/ProductCard-DDHkNd_B.js",
     "name": "ProductCard",
     "imports": [
       "resources/js/app.js",
@@ -26,12 +26,12 @@
     "name": "format"
   },
   "resources/css/app.css": {
-    "file": "assets/app-Ce-Ejnal.css",
+    "file": "assets/app-54Je1aXG.css",
     "src": "resources/css/app.css",
     "isEntry": true
   },
   "resources/js/app.js": {
-    "file": "assets/app-DB5MfGf6.js",
+    "file": "assets/app-Fzi_DE3l.js",
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true,
@@ -44,25 +44,25 @@
       "resources/js/pages/Product.vue"
     ],
     "css": [
-      "assets/app-Ce-Ejnal.css"
+      "assets/app-54Je1aXG.css"
     ]
   },
   "resources/js/pages/About.vue": {
-    "file": "assets/About-BQl_Wat2.js",
+    "file": "assets/About-CZzAawzX.js",
     "name": "About",
     "src": "resources/js/pages/About.vue",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.js",
-      "_AppHeader-BPAIoSvZ.js",
-      "_AppFooter-lTDGTE-h.js"
+      "_AppHeader-BGo-MeR4.js",
+      "_AppFooter-6VxO4QNC.js"
     ],
     "css": [
-      "assets/app-Ce-Ejnal.css"
+      "assets/app-54Je1aXG.css"
     ]
   },
   "resources/js/pages/Admin/Login.vue": {
-    "file": "assets/Login-Bx6IB2Ez.js",
+    "file": "assets/Login-CL12ethN.js",
     "name": "Login",
     "src": "resources/js/pages/Admin/Login.vue",
     "isDynamicEntry": true,
@@ -70,11 +70,11 @@
       "resources/js/app.js"
     ],
     "css": [
-      "assets/app-Ce-Ejnal.css"
+      "assets/app-54Je1aXG.css"
     ]
   },
   "resources/js/pages/Admin/Products.vue": {
-    "file": "assets/Products-BKYm1Tbw.js",
+    "file": "assets/Products-CeQ6GFRb.js",
     "name": "Products",
     "src": "resources/js/pages/Admin/Products.vue",
     "isDynamicEntry": true,
@@ -83,54 +83,54 @@
       "_format-plPf0Vj5.js"
     ],
     "css": [
-      "assets/app-Ce-Ejnal.css"
+      "assets/app-54Je1aXG.css"
     ]
   },
   "resources/js/pages/Catalog.vue": {
-    "file": "assets/Catalog-CBca2n--.js",
+    "file": "assets/Catalog-CbUsDlda.js",
     "name": "Catalog",
     "src": "resources/js/pages/Catalog.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_AppHeader-BPAIoSvZ.js",
-      "_AppFooter-lTDGTE-h.js",
-      "_ProductCard-DaVPm11Q.js",
+      "_AppHeader-BGo-MeR4.js",
+      "_AppFooter-6VxO4QNC.js",
+      "_ProductCard-DDHkNd_B.js",
       "resources/js/app.js",
       "_format-plPf0Vj5.js"
     ],
     "css": [
-      "assets/app-Ce-Ejnal.css"
+      "assets/app-54Je1aXG.css"
     ]
   },
   "resources/js/pages/Home.vue": {
-    "file": "assets/Home-Dp_h04Kd.js",
+    "file": "assets/Home-CPM4b4Yp.js",
     "name": "Home",
     "src": "resources/js/pages/Home.vue",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.js",
-      "_AppHeader-BPAIoSvZ.js",
-      "_AppFooter-lTDGTE-h.js",
-      "_ProductCard-DaVPm11Q.js",
+      "_AppHeader-BGo-MeR4.js",
+      "_AppFooter-6VxO4QNC.js",
+      "_ProductCard-DDHkNd_B.js",
       "_format-plPf0Vj5.js"
     ],
     "css": [
-      "assets/app-Ce-Ejnal.css"
+      "assets/app-54Je1aXG.css"
     ]
   },
   "resources/js/pages/Product.vue": {
-    "file": "assets/Product-CjLn1WHn.js",
+    "file": "assets/Product-AnQk8uch.js",
     "name": "Product",
     "src": "resources/js/pages/Product.vue",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.js",
-      "_AppHeader-BPAIoSvZ.js",
-      "_ProductCard-DaVPm11Q.js",
+      "_AppHeader-BGo-MeR4.js",
+      "_ProductCard-DDHkNd_B.js",
       "_format-plPf0Vj5.js"
     ],
     "css": [
-      "assets/app-Ce-Ejnal.css"
+      "assets/app-54Je1aXG.css"
     ]
   }
 }
