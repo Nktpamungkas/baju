@@ -77,17 +77,6 @@ const currentVariant = computed(() => props.product.variants[varIdx.value])
               class="btn-ghost flex-1 whitespace-nowrap text-center no-underline"
               :class="{ 'pointer-events-none opacity-40': !product.toko }">Beli di Tokopedia</a>
           </div>
-
-          <!-- Size table -->
-          <div class="mt-[30px] overflow-hidden rounded-lg2 border border-line">
-            <div class="grid grid-cols-4 gap-1 bg-panel px-3 py-[11px] text-[10px] uppercase tracking-[0.04em] text-faint md:gap-2 md:px-4 md:text-[11px] md:tracking-[0.08em]">
-              <span>Ukuran</span><span>{{ product.sizeCols[0] }}</span><span>{{ product.sizeCols[1] }}</span><span>{{ product.sizeCols[2] }}</span>
-            </div>
-            <div v-for="row in product.sizes" :key="row[0]" class="grid grid-cols-4 gap-1 border-t border-[#F0EBE2] px-3 py-2.5 text-[12.5px] text-[#3A372F] md:gap-2 md:px-4 md:text-[13.5px]">
-              <span class="font-medium text-ink">{{ row[0] }}</span><span>{{ row[1] }}</span><span>{{ row[2] }}</span><span>{{ row[3] }}</span>
-            </div>
-            <div class="border-t border-[#F0EBE2] px-3 py-2.5 text-[11px] text-faint md:px-4 md:text-[11.5px]">Ukuran dalam cm · selisih 1–2 cm karena pengukuran manual.</div>
-          </div>
         </div>
       </section>
 
