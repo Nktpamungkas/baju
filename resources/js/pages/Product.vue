@@ -32,8 +32,8 @@ const currentVariant = computed(() => props.product.variants[varIdx.value])
       <section class="container-nale grid grid-cols-1 items-start gap-8 py-6 pb-10 md:grid-cols-2 md:gap-14 md:pb-14">
         <!-- Gallery -->
         <div>
-          <div class="aspect-[4/5] overflow-hidden rounded-lg2 bg-cardbg">
-            <img :src="currentVariant.img" :alt="product.name" class="h-full w-full object-cover" />
+          <div class="group aspect-[4/5] overflow-hidden rounded-lg2 bg-cardbg">
+            <img :src="currentVariant.img" :alt="product.name" class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105" />
           </div>
           <div class="mt-3 flex gap-2.5">
             <button
@@ -41,7 +41,7 @@ const currentVariant = computed(() => props.product.variants[varIdx.value])
               class="h-16 w-[54px] flex-shrink-0 overflow-hidden rounded-card border-2 bg-cardbg md:h-20 md:w-[66px]"
               :style="{ borderColor: i === varIdx ? '#1C1A17' : 'transparent' }"
               @click="varIdx = i">
-              <img :src="v.img" :alt="v.name" class="h-full w-full object-cover" />
+              <img :src="v.img" :alt="v.name" loading="lazy" class="h-full w-full object-cover" />
             </button>
           </div>
         </div>

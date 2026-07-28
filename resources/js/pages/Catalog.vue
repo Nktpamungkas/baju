@@ -44,8 +44,11 @@ const title = computed(() => (active.value === 'Semua' ? 'Semua Produk' : active
       </section>
 
       <section class="container-nale pb-16 pt-6 md:pb-[90px] md:pt-[34px]">
-        <div class="grid grid-cols-2 gap-x-4 gap-y-6 md:grid-cols-4 md:gap-x-[22px] md:gap-y-9">
+        <div v-if="filtered.length" class="grid grid-cols-2 gap-x-4 gap-y-6 md:grid-cols-4 md:gap-x-[22px] md:gap-y-9">
           <ProductCard v-for="p in filtered" :key="p.id" :product="p" />
+        </div>
+        <div v-else class="py-16 text-center">
+          <p class="text-[15px] text-muted">Belum ada produk untuk kategori "{{ active }}".</p>
         </div>
       </section>
     </main>

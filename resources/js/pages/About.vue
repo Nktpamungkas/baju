@@ -31,10 +31,10 @@ const values = [
           </div>
         </div>
         <div class="grid grid-cols-2 grid-rows-2 gap-2.5">
-          <img src="/img/koko-olivegreen.jpg" alt="" class="aspect-square w-full rounded-lg2 object-cover" />
-          <img src="/img/tracy-operamauve.jpg" alt="" class="aspect-square w-full rounded-lg2 object-cover" />
-          <img src="/img/orion-denim.jpg" alt="" class="aspect-square w-full rounded-lg2 object-cover" />
-          <img src="/img/irina-rosewood.jpg" alt="" class="aspect-square w-full rounded-lg2 object-cover" />
+          <img src="/img/koko-olivegreen.jpg" alt="Setelan anak warna olive green" loading="lazy" class="aspect-square w-full rounded-lg2 object-cover" />
+          <img src="/img/tracy-operamauve.jpg" alt="Baju anak warna opera mauve" loading="lazy" class="aspect-square w-full rounded-lg2 object-cover" />
+          <img src="/img/orion-denim.jpg" alt="Baju anak bahan denim" loading="lazy" class="aspect-square w-full rounded-lg2 object-cover" />
+          <img src="/img/irina-rosewood.jpg" alt="Baju anak warna rosewood" loading="lazy" class="aspect-square w-full rounded-lg2 object-cover" />
         </div>
       </section>
 
