@@ -22,7 +22,6 @@ module.exports = {
         cardbg:     '#EFEAE2', // image placeholder background
         accent:     '#BA6A45', // clay accent (eyebrows, highlights)
         accentsoft: '#D9A88C', // soft accent (dark sections)
-        success:    '#5E7A4E', // order-confirmed badge
       },
       fontFamily: {
         // display: serif for headings + prices; sans: UI text

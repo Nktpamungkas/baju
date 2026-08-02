@@ -19,6 +19,7 @@ class HandleInertiaRequests extends Middleware
         return [
             ...parent::share($request),
             'appName' => config('app.name'),
+            'whatsapp' => config('nale.whatsapp'),
         ];
     }
 }
