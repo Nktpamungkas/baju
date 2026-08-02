@@ -1,20 +1,21 @@
 {
-  "_AppFooter-6VxO4QNC.js": {
-    "file": "assets/AppFooter-6VxO4QNC.js",
+  "_AppFooter-Ceju3SSl.js": {
+    "file": "assets/AppFooter-Ceju3SSl.js",
     "name": "AppFooter",
     "imports": [
-      "resources/js/app.js"
+      "resources/js/app.js",
+      "_FloatingWhatsApp-CS6M3cNg.js"
     ]
   },
-  "_AppHeader-BGo-MeR4.js": {
-    "file": "assets/AppHeader-BGo-MeR4.js",
-    "name": "AppHeader",
+  "_FloatingWhatsApp-CS6M3cNg.js": {
+    "file": "assets/FloatingWhatsApp-CS6M3cNg.js",
+    "name": "FloatingWhatsApp",
     "imports": [
       "resources/js/app.js"
     ]
   },
-  "_ProductCard-DDHkNd_B.js": {
-    "file": "assets/ProductCard-DDHkNd_B.js",
+  "_ProductCard-DUDPxwFL.js": {
+    "file": "assets/ProductCard-DUDPxwFL.js",
     "name": "ProductCard",
     "imports": [
       "resources/js/app.js",
@@ -26,12 +27,12 @@
     "name": "format"
   },
   "resources/css/app.css": {
-    "file": "assets/app-54Je1aXG.css",
+    "file": "assets/app-By33mmni.css",
     "src": "resources/css/app.css",
     "isEntry": true
   },
   "resources/js/app.js": {
-    "file": "assets/app-Fzi_DE3l.js",
+    "file": "assets/app-DzG5VCeS.js",
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true,
@@ -44,25 +45,25 @@
       "resources/js/pages/Product.vue"
     ],
     "css": [
-      "assets/app-54Je1aXG.css"
+      "assets/app-By33mmni.css"
     ]
   },
   "resources/js/pages/About.vue": {
-    "file": "assets/About-CZzAawzX.js",
+    "file": "assets/About-BxRbGVtq.js",
     "name": "About",
     "src": "resources/js/pages/About.vue",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.js",
-      "_AppHeader-BGo-MeR4.js",
-      "_AppFooter-6VxO4QNC.js"
+      "_FloatingWhatsApp-CS6M3cNg.js",
+      "_AppFooter-Ceju3SSl.js"
     ],
     "css": [
-      "assets/app-54Je1aXG.css"
+      "assets/app-By33mmni.css"
     ]
   },
   "resources/js/pages/Admin/Login.vue": {
-    "file": "assets/Login-CL12ethN.js",
+    "file": "assets/Login-Mrbs9vbE.js",
     "name": "Login",
     "src": "resources/js/pages/Admin/Login.vue",
     "isDynamicEntry": true,
@@ -70,11 +71,11 @@
       "resources/js/app.js"
     ],
     "css": [
-      "assets/app-54Je1aXG.css"
+      "assets/app-By33mmni.css"
     ]
   },
   "resources/js/pages/Admin/Products.vue": {
-    "file": "assets/Products-CeQ6GFRb.js",
+    "file": "assets/Products-CjhvhEyb.js",
     "name": "Products",
     "src": "resources/js/pages/Admin/Products.vue",
     "isDynamicEntry": true,
@@ -83,54 +84,54 @@
       "_format-plPf0Vj5.js"
     ],
     "css": [
-      "assets/app-54Je1aXG.css"
+      "assets/app-By33mmni.css"
     ]
   },
   "resources/js/pages/Catalog.vue": {
-    "file": "assets/Catalog-CbUsDlda.js",
+    "file": "assets/Catalog-BMRTj8Ly.js",
     "name": "Catalog",
     "src": "resources/js/pages/Catalog.vue",
     "isDynamicEntry": true,
     "imports": [
-      "_AppHeader-BGo-MeR4.js",
-      "_AppFooter-6VxO4QNC.js",
-      "_ProductCard-DDHkNd_B.js",
+      "_FloatingWhatsApp-CS6M3cNg.js",
+      "_AppFooter-Ceju3SSl.js",
+      "_ProductCard-DUDPxwFL.js",
       "resources/js/app.js",
       "_format-plPf0Vj5.js"
     ],
     "css": [
-      "assets/app-54Je1aXG.css"
+      "assets/app-By33mmni.css"
     ]
   },
   "resources/js/pages/Home.vue": {
-    "file": "assets/Home-CPM4b4Yp.js",
+    "file": "assets/Home-55knmGd-.js",
     "name": "Home",
     "src": "resources/js/pages/Home.vue",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.js",
-      "_AppHeader-BGo-MeR4.js",
-      "_AppFooter-6VxO4QNC.js",
-      "_ProductCard-DDHkNd_B.js",
+      "_FloatingWhatsApp-CS6M3cNg.js",
+      "_AppFooter-Ceju3SSl.js",
+      "_ProductCard-DUDPxwFL.js",
       "_format-plPf0Vj5.js"
     ],
     "css": [
-      "assets/app-54Je1aXG.css"
+      "assets/app-By33mmni.css"
     ]
   },
   "resources/js/pages/Product.vue": {
-    "file": "assets/Product-AnQk8uch.js",
+    "file": "assets/Product-DS5GamJI.js",
     "name": "Product",
     "src": "resources/js/pages/Product.vue",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.js",
-      "_AppHeader-BGo-MeR4.js",
-      "_ProductCard-DDHkNd_B.js",
+      "_FloatingWhatsApp-CS6M3cNg.js",
+      "_ProductCard-DUDPxwFL.js",
       "_format-plPf0Vj5.js"
     ],
     "css": [
-      "assets/app-54Je1aXG.css"
+      "assets/app-By33mmni.css"
     ]
   }
 }
