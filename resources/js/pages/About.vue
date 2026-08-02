@@ -2,6 +2,7 @@
 import { router } from '@inertiajs/vue3'
 import AppHeader from '@/components/AppHeader.vue'
 import AppFooter from '@/components/AppFooter.vue'
+import FloatingWhatsApp from '@/components/FloatingWhatsApp.vue'
 
 const values = [
   { t: 'Bahan pilihan', d: 'Katun organik, linen, dan muslin yang adem dan lembut di kulit anak.' },
@@ -31,10 +32,10 @@ const values = [
           </div>
         </div>
         <div class="grid grid-cols-2 grid-rows-2 gap-2.5">
-          <img src="/img/koko-olivegreen.jpg" alt="" class="aspect-square w-full rounded-lg2 object-cover" />
-          <img src="/img/tracy-operamauve.jpg" alt="" class="aspect-square w-full rounded-lg2 object-cover" />
-          <img src="/img/orion-denim.jpg" alt="" class="aspect-square w-full rounded-lg2 object-cover" />
-          <img src="/img/irina-rosewood.jpg" alt="" class="aspect-square w-full rounded-lg2 object-cover" />
+          <img src="/img/koko-olivegreen.jpg" alt="Koko warna olive green" loading="lazy" class="aspect-square w-full rounded-lg2 object-cover" />
+          <img src="/img/tracy-operamauve.jpg" alt="Tracy warna opera mauve" loading="lazy" class="aspect-square w-full rounded-lg2 object-cover" />
+          <img src="/img/orion-denim.jpg" alt="Orion warna denim" loading="lazy" class="aspect-square w-full rounded-lg2 object-cover" />
+          <img src="/img/irina-rosewood.jpg" alt="Irina warna rosewood" loading="lazy" class="aspect-square w-full rounded-lg2 object-cover" />
         </div>
       </section>
 
@@ -57,5 +58,6 @@ const values = [
     </main>
 
     <AppFooter />
+    <FloatingWhatsApp />
   </div>
 </template>

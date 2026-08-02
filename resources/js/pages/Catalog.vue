@@ -2,6 +2,7 @@
 import { ref, computed } from 'vue'
 import AppHeader from '@/components/AppHeader.vue'
 import AppFooter from '@/components/AppFooter.vue'
+import FloatingWhatsApp from '@/components/FloatingWhatsApp.vue'
 import ProductCard from '@/components/ProductCard.vue'
 
 /**
@@ -44,12 +45,16 @@ const title = computed(() => (active.value === 'Semua' ? 'Semua Produk' : active
       </section>
 
       <section class="container-nale pb-16 pt-6 md:pb-[90px] md:pt-[34px]">
-        <div class="grid grid-cols-2 gap-x-4 gap-y-6 md:grid-cols-4 md:gap-x-[22px] md:gap-y-9">
+        <p v-if="filtered.length === 0" class="py-16 text-center text-[14px] text-faint">
+          Belum ada produk untuk kategori &quot;{{ active }}&quot;.
+        </p>
+        <div v-else class="grid grid-cols-2 gap-x-4 gap-y-6 md:grid-cols-4 md:gap-x-[22px] md:gap-y-9">
           <ProductCard v-for="p in filtered" :key="p.id" :product="p" />
         </div>
       </section>
     </main>
 
     <AppFooter />
+    <FloatingWhatsApp />
   </div>
 </template>
