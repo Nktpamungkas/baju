@@ -1,20 +1,37 @@
 {
+<<<<<<< HEAD
   "_AppFooter-MwOe4Dsi.js": {
     "file": "assets/AppFooter-MwOe4Dsi.js",
+=======
+  "_AppFooter-Ceju3SSl.js": {
+    "file": "assets/AppFooter-Ceju3SSl.js",
+>>>>>>> f452625efaa9ee8128c2d19ca5cd6f302b7b2702
     "name": "AppFooter",
     "imports": [
-      "resources/js/app.js"
+      "resources/js/app.js",
+      "_FloatingWhatsApp-CS6M3cNg.js"
     ]
   },
+<<<<<<< HEAD
   "_AppHeader-VrpZJTw9.js": {
     "file": "assets/AppHeader-VrpZJTw9.js",
     "name": "AppHeader",
+=======
+  "_FloatingWhatsApp-CS6M3cNg.js": {
+    "file": "assets/FloatingWhatsApp-CS6M3cNg.js",
+    "name": "FloatingWhatsApp",
+>>>>>>> f452625efaa9ee8128c2d19ca5cd6f302b7b2702
     "imports": [
       "resources/js/app.js"
     ]
   },
+<<<<<<< HEAD
   "_ProductCard-CthzsLSI.js": {
     "file": "assets/ProductCard-CthzsLSI.js",
+=======
+  "_ProductCard-DUDPxwFL.js": {
+    "file": "assets/ProductCard-DUDPxwFL.js",
+>>>>>>> f452625efaa9ee8128c2d19ca5cd6f302b7b2702
     "name": "ProductCard",
     "imports": [
       "resources/js/app.js",
@@ -26,12 +43,16 @@
     "name": "format"
   },
   "resources/css/app.css": {
-    "file": "assets/app-54Je1aXG.css",
+    "file": "assets/app-By33mmni.css",
     "src": "resources/css/app.css",
     "isEntry": true
   },
   "resources/js/app.js": {
+<<<<<<< HEAD
     "file": "assets/app-BnTqFu8c.js",
+=======
+    "file": "assets/app-DzG5VCeS.js",
+>>>>>>> f452625efaa9ee8128c2d19ca5cd6f302b7b2702
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true,
@@ -44,25 +65,38 @@
       "resources/js/pages/Product.vue"
     ],
     "css": [
-      "assets/app-54Je1aXG.css"
+      "assets/app-By33mmni.css"
     ]
   },
   "resources/js/pages/About.vue": {
+<<<<<<< HEAD
     "file": "assets/About-CyDuVgOz.js",
+=======
+    "file": "assets/About-BxRbGVtq.js",
+>>>>>>> f452625efaa9ee8128c2d19ca5cd6f302b7b2702
     "name": "About",
     "src": "resources/js/pages/About.vue",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.js",
+<<<<<<< HEAD
       "_AppHeader-VrpZJTw9.js",
       "_AppFooter-MwOe4Dsi.js"
+=======
+      "_FloatingWhatsApp-CS6M3cNg.js",
+      "_AppFooter-Ceju3SSl.js"
+>>>>>>> f452625efaa9ee8128c2d19ca5cd6f302b7b2702
     ],
     "css": [
-      "assets/app-54Je1aXG.css"
+      "assets/app-By33mmni.css"
     ]
   },
   "resources/js/pages/Admin/Login.vue": {
+<<<<<<< HEAD
     "file": "assets/Login-B18bwXzt.js",
+=======
+    "file": "assets/Login-Mrbs9vbE.js",
+>>>>>>> f452625efaa9ee8128c2d19ca5cd6f302b7b2702
     "name": "Login",
     "src": "resources/js/pages/Admin/Login.vue",
     "isDynamicEntry": true,
@@ -70,11 +104,15 @@
       "resources/js/app.js"
     ],
     "css": [
-      "assets/app-54Je1aXG.css"
+      "assets/app-By33mmni.css"
     ]
   },
   "resources/js/pages/Admin/Products.vue": {
+<<<<<<< HEAD
     "file": "assets/Products-DEt9Jvrv.js",
+=======
+    "file": "assets/Products-CjhvhEyb.js",
+>>>>>>> f452625efaa9ee8128c2d19ca5cd6f302b7b2702
     "name": "Products",
     "src": "resources/js/pages/Admin/Products.vue",
     "isDynamicEntry": true,
@@ -83,54 +121,83 @@
       "_format-plPf0Vj5.js"
     ],
     "css": [
-      "assets/app-54Je1aXG.css"
+      "assets/app-By33mmni.css"
     ]
   },
   "resources/js/pages/Catalog.vue": {
+<<<<<<< HEAD
     "file": "assets/Catalog-B5zeYyRD.js",
+=======
+    "file": "assets/Catalog-BMRTj8Ly.js",
+>>>>>>> f452625efaa9ee8128c2d19ca5cd6f302b7b2702
     "name": "Catalog",
     "src": "resources/js/pages/Catalog.vue",
     "isDynamicEntry": true,
     "imports": [
+<<<<<<< HEAD
       "_AppHeader-VrpZJTw9.js",
       "_AppFooter-MwOe4Dsi.js",
       "_ProductCard-CthzsLSI.js",
+=======
+      "_FloatingWhatsApp-CS6M3cNg.js",
+      "_AppFooter-Ceju3SSl.js",
+      "_ProductCard-DUDPxwFL.js",
+>>>>>>> f452625efaa9ee8128c2d19ca5cd6f302b7b2702
       "resources/js/app.js",
       "_format-plPf0Vj5.js"
     ],
     "css": [
-      "assets/app-54Je1aXG.css"
+      "assets/app-By33mmni.css"
     ]
   },
   "resources/js/pages/Home.vue": {
+<<<<<<< HEAD
     "file": "assets/Home-DJbChjvj.js",
+=======
+    "file": "assets/Home-55knmGd-.js",
+>>>>>>> f452625efaa9ee8128c2d19ca5cd6f302b7b2702
     "name": "Home",
     "src": "resources/js/pages/Home.vue",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.js",
+<<<<<<< HEAD
       "_AppHeader-VrpZJTw9.js",
       "_AppFooter-MwOe4Dsi.js",
       "_ProductCard-CthzsLSI.js",
+=======
+      "_FloatingWhatsApp-CS6M3cNg.js",
+      "_AppFooter-Ceju3SSl.js",
+      "_ProductCard-DUDPxwFL.js",
+>>>>>>> f452625efaa9ee8128c2d19ca5cd6f302b7b2702
       "_format-plPf0Vj5.js"
     ],
     "css": [
-      "assets/app-54Je1aXG.css"
+      "assets/app-By33mmni.css"
     ]
   },
   "resources/js/pages/Product.vue": {
+<<<<<<< HEAD
     "file": "assets/Product-CNNO8H2b.js",
+=======
+    "file": "assets/Product-DS5GamJI.js",
+>>>>>>> f452625efaa9ee8128c2d19ca5cd6f302b7b2702
     "name": "Product",
     "src": "resources/js/pages/Product.vue",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.js",
+<<<<<<< HEAD
       "_AppHeader-VrpZJTw9.js",
       "_ProductCard-CthzsLSI.js",
+=======
+      "_FloatingWhatsApp-CS6M3cNg.js",
+      "_ProductCard-DUDPxwFL.js",
+>>>>>>> f452625efaa9ee8128c2d19ca5cd6f302b7b2702
       "_format-plPf0Vj5.js"
     ],
     "css": [
-      "assets/app-54Je1aXG.css"
+      "assets/app-By33mmni.css"
     ]
   }
 }

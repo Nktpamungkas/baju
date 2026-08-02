@@ -32,6 +32,17 @@ class ProductService
         ];
     }
 
+    public function metaFor(Product $product): array
+    {
+        $price = 'Rp '.number_format($product->price, 0, ',', '.');
+
+        return [
+            'title' => "{$product->name} — {$price}",
+            'description' => Str::limit($product->desc ?? '', 150),
+            'image' => $product->variants[0]['img'] ?? null,
+        ];
+    }
+
     public function create(array $data): Product
     {
         $data = $this->applyDefaults($data);
