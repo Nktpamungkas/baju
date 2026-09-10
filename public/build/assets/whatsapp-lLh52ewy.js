@@ -1,0 +1,1 @@
+import{m as t,Q as p}from"./app-DBLCHdo5.js";function s(o="Halo, saya mau tanya soal produk NALE",e=null){const a=t(()=>e||p().props.whatsapp),n=t(()=>a.value?`https://wa.me/${a.value}?text=${encodeURIComponent(o)}`:null);return{number:a,href:n}}export{s as u};

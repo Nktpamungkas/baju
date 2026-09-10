@@ -14,7 +14,7 @@ const isNew = ref(false)
 
 function blank() {
   return {
-    id: null, name: '', type: 'Setelan', price: 89000, word: 'warna',
+    id: null, name: '', type: 'Setelan', price: 89000, word: 'warna', weight: 200, stock: null,
     material: '', desc: '', shopee: '', toko: '', variants: [],
     sizeCols: ['Dada', 'Panjang', 'Lengan'], sizes: [['S', 0, 0, 0], ['M', 0, 0, 0], ['L', 0, 0, 0]],
   }
@@ -41,7 +41,12 @@ async function uploadVariant(i, e) {
 
 function save() {
   const d = draft.value
-  const payload = { ...d, price: Number(d.price) || 0 }
+  const payload = {
+    ...d,
+    price: Number(d.price) || 0,
+    weight: Number(d.weight) || 200,
+    stock: d.stock === '' || d.stock === null ? null : Number(d.stock),
+  }
   const opts = { onSuccess: close, preserveScroll: true }
   if (isNew.value) router.post('/admin/produk', payload, opts)
   else router.put(`/admin/produk/${d.id}`, payload, opts)
@@ -54,6 +59,16 @@ function destroy(p) {
 }
 
 const today = new Date().toLocaleDateString('id-ID', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' })
+
+const search = ref('')
+const typeFilter = ref('Semua')
+const filteredProducts = computed(() => {
+  let list = props.products
+  if (typeFilter.value !== 'Semua') list = list.filter((p) => p.type === typeFilter.value)
+  const q = search.value.trim().toLowerCase()
+  if (q) list = list.filter((p) => p.name.toLowerCase().includes(q))
+  return list
+})
 </script>
 
 <template>
@@ -70,11 +85,21 @@ const today = new Date().toLocaleDateString('id-ID', { weekday: 'long', day: 'nu
     </header>
 
     <div class="px-4 pb-10 pt-5 md:px-[34px] md:pb-[60px] md:pt-[30px]">
+      <div class="mb-4 flex flex-wrap gap-3">
+        <input
+          v-model="search" type="search" placeholder="Cari nama produk..."
+          class="min-w-0 flex-1 rounded-pill border px-4 py-2 text-[13px] md:max-w-xs" style="border-color:#D9D2C7">
+        <select v-model="typeFilter" class="rounded-pill border px-4 py-2 text-[13px] text-muted" style="border-color:#D9D2C7">
+          <option value="Semua">Semua Kategori</option>
+          <option v-for="t in TYPES" :key="t" :value="t">{{ t }}</option>
+        </select>
+      </div>
       <div class="overflow-hidden rounded-[12px] border bg-canvas" style="border-color:#E9E3D9">
         <div class="hidden gap-4 bg-panel px-[22px] py-3.5 text-[11.5px] uppercase tracking-[0.06em] text-faint md:grid md:[grid-template-columns:2.4fr_.9fr_.9fr_1fr_1.1fr_1fr]">
           <span>Produk</span><span>Kategori</span><span>Harga</span><span>Varian</span><span>Marketplace</span><span class="text-right">Aksi</span>
         </div>
-        <div v-for="p in products" :key="p.id" class="flex flex-col gap-3 border-t p-4 md:grid md:items-center md:gap-4 md:px-[22px] md:py-3.5 md:[grid-template-columns:2.4fr_.9fr_.9fr_1fr_1.1fr_1fr]" style="border-color:#F0EBE2">
+        <p v-if="filteredProducts.length === 0" class="p-8 text-center text-[13.5px] text-faint">Produk tidak ditemukan.</p>
+        <div v-for="p in filteredProducts" :key="p.id" class="flex flex-col gap-3 border-t p-4 md:grid md:items-center md:gap-4 md:px-[22px] md:py-3.5 md:[grid-template-columns:2.4fr_.9fr_.9fr_1fr_1.1fr_1fr]" style="border-color:#F0EBE2">
           <div class="flex min-w-0 items-center gap-3">
             <img :src="(p.variants[0] || {}).img" :alt="p.name" class="h-12 w-10 flex-shrink-0 rounded-card bg-cardbg object-cover md:h-[54px] md:w-[44px]" />
             <div class="min-w-0 flex-1">
@@ -84,10 +109,14 @@ const today = new Date().toLocaleDateString('id-ID', { weekday: 'long', day: 'nu
             <div class="text-right md:hidden">
               <div class="text-[13.5px]">{{ rp(p.price) }}</div>
               <div class="text-[12px] text-muted">{{ p.type }}</div>
+              <div class="text-[11px]" :style="p.stock === 0 ? 'color:#B5675F' : 'color:#A39C90'">{{ p.stock === null ? 'Stok tak terbatas' : `Stok: ${p.stock}` }}</div>
             </div>
           </div>
           <span class="hidden text-[13.5px] text-muted md:inline">{{ p.type }}</span>
-          <span class="hidden text-[13.5px] md:inline">{{ rp(p.price) }}</span>
+          <span class="hidden md:inline">
+            <span class="block text-[13.5px]">{{ rp(p.price) }}</span>
+            <span class="block text-[11px]" :style="p.stock === 0 ? 'color:#B5675F' : 'color:#A39C90'">{{ p.stock === null ? 'Tak terbatas' : `Stok: ${p.stock}` }}</span>
+          </span>
           <div class="flex items-center gap-[5px]">
             <span v-for="(w, i) in p.variants.slice(0, 4)" :key="i" :title="w.name" class="h-4 w-4 overflow-hidden rounded-pill border" style="border-color:#E2DBCF">
               <img :src="w.img" class="h-full w-full object-cover" />
@@ -128,8 +157,14 @@ const today = new Date().toLocaleDateString('id-ID', { weekday: 'long', day: 'nu
             <label class="flex flex-col gap-1.5"><span class="text-[12.5px] text-muted">Harga (Rp)</span>
               <input v-model="draft.price" type="number" class="rounded-lg2 border px-3.5 py-2.5 text-[14px]" style="border-color:#DDD5C9;background:#fff" /></label>
           </div>
-          <label class="flex flex-col gap-1.5"><span class="text-[12.5px] text-muted">Material</span>
-            <input v-model="draft.material" class="rounded-lg2 border px-3.5 py-2.5 text-[14px]" style="border-color:#DDD5C9;background:#fff" /></label>
+          <div class="grid grid-cols-1 gap-3.5 md:grid-cols-2">
+            <label class="flex flex-col gap-1.5"><span class="text-[12.5px] text-muted">Material</span>
+              <input v-model="draft.material" class="rounded-lg2 border px-3.5 py-2.5 text-[14px]" style="border-color:#DDD5C9;background:#fff" /></label>
+            <label class="flex flex-col gap-1.5"><span class="text-[12.5px] text-muted">Berat (gram, buat hitung ongkir)</span>
+              <input v-model="draft.weight" type="number" class="rounded-lg2 border px-3.5 py-2.5 text-[14px]" style="border-color:#DDD5C9;background:#fff" /></label>
+          </div>
+          <label class="flex flex-col gap-1.5"><span class="text-[12.5px] text-muted">Stok (kosongkan kalau tidak mau dilacak / tidak terbatas)</span>
+            <input v-model="draft.stock" type="number" min="0" placeholder="Tidak terbatas" class="rounded-lg2 border px-3.5 py-2.5 text-[14px]" style="border-color:#DDD5C9;background:#fff" /></label>
           <div class="grid grid-cols-1 gap-3.5 md:grid-cols-2">
             <label class="flex flex-col gap-1.5"><span class="text-[12.5px] text-muted">Link Shopee</span>
               <input v-model="draft.shopee" placeholder="https://shopee.co.id/..." class="rounded-lg2 border px-3.5 py-2.5 text-[14px]" style="border-color:#DDD5C9;background:#fff" /></label>

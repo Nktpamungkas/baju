@@ -1,37 +1,44 @@
 {
-<<<<<<< HEAD
-  "_AppFooter-MwOe4Dsi.js": {
-    "file": "assets/AppFooter-MwOe4Dsi.js",
-=======
-  "_AppFooter-Ceju3SSl.js": {
-    "file": "assets/AppFooter-Ceju3SSl.js",
->>>>>>> f452625efaa9ee8128c2d19ca5cd6f302b7b2702
-    "name": "AppFooter",
-    "imports": [
-      "resources/js/app.js",
-      "_FloatingWhatsApp-CS6M3cNg.js"
-    ]
-  },
-<<<<<<< HEAD
-  "_AppHeader-VrpZJTw9.js": {
-    "file": "assets/AppHeader-VrpZJTw9.js",
-    "name": "AppHeader",
-=======
-  "_FloatingWhatsApp-CS6M3cNg.js": {
-    "file": "assets/FloatingWhatsApp-CS6M3cNg.js",
-    "name": "FloatingWhatsApp",
->>>>>>> f452625efaa9ee8128c2d19ca5cd6f302b7b2702
+  "_AdminLayout-BqnmINIK.js": {
+    "file": "assets/AdminLayout-BqnmINIK.js",
+    "name": "AdminLayout",
     "imports": [
       "resources/js/app.js"
     ]
   },
-<<<<<<< HEAD
-  "_ProductCard-CthzsLSI.js": {
-    "file": "assets/ProductCard-CthzsLSI.js",
-=======
-  "_ProductCard-DUDPxwFL.js": {
-    "file": "assets/ProductCard-DUDPxwFL.js",
->>>>>>> f452625efaa9ee8128c2d19ca5cd6f302b7b2702
+  "_AppFooter-JZO5LZI_.js": {
+    "file": "assets/AppFooter-JZO5LZI_.js",
+    "name": "AppFooter",
+    "imports": [
+      "resources/js/app.js",
+      "_whatsapp-lLh52ewy.js",
+      "_Icon-DOw92V0y.js"
+    ]
+  },
+  "_AppHeader-DeRY2Z8h.js": {
+    "file": "assets/AppHeader-DeRY2Z8h.js",
+    "name": "AppHeader",
+    "imports": [
+      "resources/js/app.js"
+    ]
+  },
+  "_FloatingWhatsApp-n7SfrW5m.js": {
+    "file": "assets/FloatingWhatsApp-n7SfrW5m.js",
+    "name": "FloatingWhatsApp",
+    "imports": [
+      "_whatsapp-lLh52ewy.js",
+      "resources/js/app.js"
+    ]
+  },
+  "_Icon-DOw92V0y.js": {
+    "file": "assets/Icon-DOw92V0y.js",
+    "name": "Icon",
+    "imports": [
+      "resources/js/app.js"
+    ]
+  },
+  "_ProductCard-Du1Kd_nj.js": {
+    "file": "assets/ProductCard-Du1Kd_nj.js",
     "name": "ProductCard",
     "imports": [
       "resources/js/app.js",
@@ -42,61 +49,80 @@
     "file": "assets/format-plPf0Vj5.js",
     "name": "format"
   },
+  "_whatsapp-lLh52ewy.js": {
+    "file": "assets/whatsapp-lLh52ewy.js",
+    "name": "whatsapp",
+    "imports": [
+      "resources/js/app.js"
+    ]
+  },
+  "node_modules/leaflet/dist/images/layers-2x.png": {
+    "file": "assets/layers-2x-Bpkbi35X.png",
+    "src": "node_modules/leaflet/dist/images/layers-2x.png"
+  },
+  "node_modules/leaflet/dist/images/layers.png": {
+    "file": "assets/layers-BWBAp2CZ.png",
+    "src": "node_modules/leaflet/dist/images/layers.png"
+  },
+  "node_modules/leaflet/dist/images/marker-icon-2x.png": {
+    "file": "assets/marker-icon-2x-_ZA0WGCc.png",
+    "src": "node_modules/leaflet/dist/images/marker-icon-2x.png"
+  },
+  "node_modules/leaflet/dist/images/marker-icon.png": {
+    "file": "assets/marker-icon-hN30_KVU.png",
+    "src": "node_modules/leaflet/dist/images/marker-icon.png"
+  },
+  "node_modules/leaflet/dist/images/marker-shadow.png": {
+    "file": "assets/marker-shadow-f7SaPCxT.png",
+    "src": "node_modules/leaflet/dist/images/marker-shadow.png"
+  },
   "resources/css/app.css": {
-    "file": "assets/app-By33mmni.css",
+    "file": "assets/app-BmrRIIXx.css",
     "src": "resources/css/app.css",
     "isEntry": true
   },
   "resources/js/app.js": {
-<<<<<<< HEAD
-    "file": "assets/app-BnTqFu8c.js",
-=======
-    "file": "assets/app-DzG5VCeS.js",
->>>>>>> f452625efaa9ee8128c2d19ca5cd6f302b7b2702
+    "file": "assets/app-DBLCHdo5.js",
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true,
     "dynamicImports": [
       "resources/js/pages/About.vue",
       "resources/js/pages/Admin/Login.vue",
+      "resources/js/pages/Admin/Orders.vue",
       "resources/js/pages/Admin/Products.vue",
+      "resources/js/pages/Admin/Reviews.vue",
+      "resources/js/pages/Cart.vue",
       "resources/js/pages/Catalog.vue",
+      "resources/js/pages/Checkout.vue",
       "resources/js/pages/Home.vue",
+      "resources/js/pages/Order/Lookup.vue",
+      "resources/js/pages/Order/Track.vue",
       "resources/js/pages/Product.vue"
     ],
     "css": [
-      "assets/app-By33mmni.css"
+      "assets/app-BmrRIIXx.css"
     ]
   },
   "resources/js/pages/About.vue": {
-<<<<<<< HEAD
-    "file": "assets/About-CyDuVgOz.js",
-=======
-    "file": "assets/About-BxRbGVtq.js",
->>>>>>> f452625efaa9ee8128c2d19ca5cd6f302b7b2702
+    "file": "assets/About-wFsLGaLD.js",
     "name": "About",
     "src": "resources/js/pages/About.vue",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.js",
-<<<<<<< HEAD
-      "_AppHeader-VrpZJTw9.js",
-      "_AppFooter-MwOe4Dsi.js"
-=======
-      "_FloatingWhatsApp-CS6M3cNg.js",
-      "_AppFooter-Ceju3SSl.js"
->>>>>>> f452625efaa9ee8128c2d19ca5cd6f302b7b2702
+      "_AppHeader-DeRY2Z8h.js",
+      "_AppFooter-JZO5LZI_.js",
+      "_FloatingWhatsApp-n7SfrW5m.js",
+      "_whatsapp-lLh52ewy.js",
+      "_Icon-DOw92V0y.js"
     ],
     "css": [
-      "assets/app-By33mmni.css"
+      "assets/app-BmrRIIXx.css"
     ]
   },
   "resources/js/pages/Admin/Login.vue": {
-<<<<<<< HEAD
-    "file": "assets/Login-B18bwXzt.js",
-=======
-    "file": "assets/Login-Mrbs9vbE.js",
->>>>>>> f452625efaa9ee8128c2d19ca5cd6f302b7b2702
+    "file": "assets/Login-BaJ3jchP.js",
     "name": "Login",
     "src": "resources/js/pages/Admin/Login.vue",
     "isDynamicEntry": true,
@@ -104,100 +130,176 @@
       "resources/js/app.js"
     ],
     "css": [
-      "assets/app-By33mmni.css"
+      "assets/app-BmrRIIXx.css"
+    ]
+  },
+  "resources/js/pages/Admin/Orders.vue": {
+    "file": "assets/Orders-BG5Ul0Rt.js",
+    "name": "Orders",
+    "src": "resources/js/pages/Admin/Orders.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js",
+      "_AdminLayout-BqnmINIK.js",
+      "_format-plPf0Vj5.js"
+    ],
+    "css": [
+      "assets/app-BmrRIIXx.css"
     ]
   },
   "resources/js/pages/Admin/Products.vue": {
-<<<<<<< HEAD
-    "file": "assets/Products-DEt9Jvrv.js",
-=======
-    "file": "assets/Products-CjhvhEyb.js",
->>>>>>> f452625efaa9ee8128c2d19ca5cd6f302b7b2702
+    "file": "assets/Products-BRyb_1Ll.js",
     "name": "Products",
     "src": "resources/js/pages/Admin/Products.vue",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.js",
+      "_AdminLayout-BqnmINIK.js",
       "_format-plPf0Vj5.js"
     ],
     "css": [
-      "assets/app-By33mmni.css"
+      "assets/app-BmrRIIXx.css"
+    ]
+  },
+  "resources/js/pages/Admin/Reviews.vue": {
+    "file": "assets/Reviews-CrleHDLS.js",
+    "name": "Reviews",
+    "src": "resources/js/pages/Admin/Reviews.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js",
+      "_AdminLayout-BqnmINIK.js"
+    ],
+    "css": [
+      "assets/app-BmrRIIXx.css"
+    ]
+  },
+  "resources/js/pages/Cart.vue": {
+    "file": "assets/Cart-BB-X8rAp.js",
+    "name": "Cart",
+    "src": "resources/js/pages/Cart.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js",
+      "_AppHeader-DeRY2Z8h.js",
+      "_AppFooter-JZO5LZI_.js",
+      "_Icon-DOw92V0y.js",
+      "_format-plPf0Vj5.js",
+      "_whatsapp-lLh52ewy.js"
+    ],
+    "css": [
+      "assets/app-BmrRIIXx.css"
     ]
   },
   "resources/js/pages/Catalog.vue": {
-<<<<<<< HEAD
-    "file": "assets/Catalog-B5zeYyRD.js",
-=======
-    "file": "assets/Catalog-BMRTj8Ly.js",
->>>>>>> f452625efaa9ee8128c2d19ca5cd6f302b7b2702
+    "file": "assets/Catalog-CiJhW-Qf.js",
     "name": "Catalog",
     "src": "resources/js/pages/Catalog.vue",
     "isDynamicEntry": true,
     "imports": [
-<<<<<<< HEAD
-      "_AppHeader-VrpZJTw9.js",
-      "_AppFooter-MwOe4Dsi.js",
-      "_ProductCard-CthzsLSI.js",
-=======
-      "_FloatingWhatsApp-CS6M3cNg.js",
-      "_AppFooter-Ceju3SSl.js",
-      "_ProductCard-DUDPxwFL.js",
->>>>>>> f452625efaa9ee8128c2d19ca5cd6f302b7b2702
       "resources/js/app.js",
+      "_AppHeader-DeRY2Z8h.js",
+      "_AppFooter-JZO5LZI_.js",
+      "_FloatingWhatsApp-n7SfrW5m.js",
+      "_ProductCard-Du1Kd_nj.js",
+      "_whatsapp-lLh52ewy.js",
+      "_Icon-DOw92V0y.js",
       "_format-plPf0Vj5.js"
     ],
     "css": [
-      "assets/app-By33mmni.css"
+      "assets/app-BmrRIIXx.css"
+    ]
+  },
+  "resources/js/pages/Checkout.vue": {
+    "file": "assets/Checkout-CdS40JHI.js",
+    "name": "Checkout",
+    "src": "resources/js/pages/Checkout.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js",
+      "_AppHeader-DeRY2Z8h.js",
+      "_Icon-DOw92V0y.js",
+      "_format-plPf0Vj5.js"
+    ],
+    "css": [
+      "assets/Checkout-CG6DamIu.css",
+      "assets/app-BmrRIIXx.css"
+    ],
+    "assets": [
+      "assets/marker-icon-hN30_KVU.png",
+      "assets/marker-icon-2x-_ZA0WGCc.png",
+      "assets/marker-shadow-f7SaPCxT.png",
+      "assets/layers-BWBAp2CZ.png",
+      "assets/layers-2x-Bpkbi35X.png"
     ]
   },
   "resources/js/pages/Home.vue": {
-<<<<<<< HEAD
-    "file": "assets/Home-DJbChjvj.js",
-=======
-    "file": "assets/Home-55knmGd-.js",
->>>>>>> f452625efaa9ee8128c2d19ca5cd6f302b7b2702
+    "file": "assets/Home-3Pllv2DO.js",
     "name": "Home",
     "src": "resources/js/pages/Home.vue",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.js",
-<<<<<<< HEAD
-      "_AppHeader-VrpZJTw9.js",
-      "_AppFooter-MwOe4Dsi.js",
-      "_ProductCard-CthzsLSI.js",
-=======
-      "_FloatingWhatsApp-CS6M3cNg.js",
-      "_AppFooter-Ceju3SSl.js",
-      "_ProductCard-DUDPxwFL.js",
->>>>>>> f452625efaa9ee8128c2d19ca5cd6f302b7b2702
-      "_format-plPf0Vj5.js"
+      "_AppHeader-DeRY2Z8h.js",
+      "_AppFooter-JZO5LZI_.js",
+      "_FloatingWhatsApp-n7SfrW5m.js",
+      "_ProductCard-Du1Kd_nj.js",
+      "_Icon-DOw92V0y.js",
+      "_format-plPf0Vj5.js",
+      "_whatsapp-lLh52ewy.js"
     ],
     "css": [
-      "assets/app-By33mmni.css"
+      "assets/app-BmrRIIXx.css"
+    ]
+  },
+  "resources/js/pages/Order/Lookup.vue": {
+    "file": "assets/Lookup-ChB6Llh1.js",
+    "name": "Lookup",
+    "src": "resources/js/pages/Order/Lookup.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js",
+      "_AppHeader-DeRY2Z8h.js",
+      "_AppFooter-JZO5LZI_.js",
+      "_format-plPf0Vj5.js",
+      "_whatsapp-lLh52ewy.js",
+      "_Icon-DOw92V0y.js"
+    ],
+    "css": [
+      "assets/app-BmrRIIXx.css"
+    ]
+  },
+  "resources/js/pages/Order/Track.vue": {
+    "file": "assets/Track-BxKEf-rt.js",
+    "name": "Track",
+    "src": "resources/js/pages/Order/Track.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js",
+      "_AppHeader-DeRY2Z8h.js",
+      "_format-plPf0Vj5.js",
+      "_whatsapp-lLh52ewy.js"
+    ],
+    "css": [
+      "assets/app-BmrRIIXx.css"
     ]
   },
   "resources/js/pages/Product.vue": {
-<<<<<<< HEAD
-    "file": "assets/Product-CNNO8H2b.js",
-=======
-    "file": "assets/Product-DS5GamJI.js",
->>>>>>> f452625efaa9ee8128c2d19ca5cd6f302b7b2702
+    "file": "assets/Product-D77tq44D.js",
     "name": "Product",
     "src": "resources/js/pages/Product.vue",
     "isDynamicEntry": true,
     "imports": [
       "resources/js/app.js",
-<<<<<<< HEAD
-      "_AppHeader-VrpZJTw9.js",
-      "_ProductCard-CthzsLSI.js",
-=======
-      "_FloatingWhatsApp-CS6M3cNg.js",
-      "_ProductCard-DUDPxwFL.js",
->>>>>>> f452625efaa9ee8128c2d19ca5cd6f302b7b2702
-      "_format-plPf0Vj5.js"
+      "_AppHeader-DeRY2Z8h.js",
+      "_FloatingWhatsApp-n7SfrW5m.js",
+      "_ProductCard-Du1Kd_nj.js",
+      "_Icon-DOw92V0y.js",
+      "_format-plPf0Vj5.js",
+      "_whatsapp-lLh52ewy.js"
     ],
     "css": [
-      "assets/app-By33mmni.css"
+      "assets/app-BmrRIIXx.css"
     ]
   }
 }

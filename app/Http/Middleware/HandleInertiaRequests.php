@@ -20,6 +20,10 @@ class HandleInertiaRequests extends Middleware
             ...parent::share($request),
             'appName' => config('app.name'),
             'whatsapp' => config('nale.whatsapp'),
+            'instagram' => config('nale.instagram'),
+            'bank' => config('nale.bank'),
+            'midtransClientKey' => config('services.midtrans.client_key'),
+            'midtransIsProduction' => (bool) config('services.midtrans.is_production'),
         ];
     }
 }

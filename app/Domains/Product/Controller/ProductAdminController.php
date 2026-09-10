@@ -60,6 +60,8 @@ class ProductAdminController
             'name'     => 'required|string|max:120',
             'type'     => 'required|string|max:40',
             'price'    => 'required|integer|min:0',
+            'weight'   => 'nullable|integer|min:1',
+            'stock'    => 'nullable|integer|min:0',
             'word'     => 'nullable|string|max:20',
             'material' => 'nullable|string|max:200',
             'desc'     => 'nullable|string|max:2000',

@@ -4,7 +4,9 @@ import { router } from '@inertiajs/vue3'
 import AppHeader from '@/components/AppHeader.vue'
 import FloatingWhatsApp from '@/components/FloatingWhatsApp.vue'
 import ProductCard from '@/components/ProductCard.vue'
+import Icon from '@/components/Icon.vue'
 import { rp } from '@/lib/format'
+import { useCart } from '@/lib/cart'
 
 /**
  * Product detail page (Inertia). In your Laravel controller:
@@ -16,9 +18,28 @@ const props = defineProps({
   related: { type: Array, default: () => [] },
 })
 
+const cart = useCart()
 const varIdx = ref(0)
+const sizeIdx = ref(null)
 
 const currentVariant = computed(() => props.product.variants[varIdx.value])
+const isOutOfStock = computed(() => props.product.stock === 0)
+const isLowStock = computed(() => props.product.stock !== null && props.product.stock > 0 && props.product.stock <= 3)
+
+function addToCart() {
+  if (sizeIdx.value === null) return
+  cart.add({
+    id: props.product.id,
+    name: props.product.name,
+    variant: currentVariant.value.name,
+    size: props.product.sizes[sizeIdx.value][0],
+    price: props.product.price,
+    img: currentVariant.value.img,
+    weight: props.product.weight,
+    qty: 1,
+  })
+  router.visit('/keranjang')
+}
 </script>
 
 <template>
@@ -33,7 +54,7 @@ const currentVariant = computed(() => props.product.variants[varIdx.value])
       <section class="container-nale grid grid-cols-1 items-start gap-8 py-6 pb-10 md:grid-cols-2 md:gap-14 md:pb-14">
         <!-- Gallery -->
         <div>
-          <div class="group aspect-[4/5] overflow-hidden rounded-lg2 bg-cardbg">
+          <div class="group aspect-[4/5] overflow-hidden rounded-lg2 bg-cardbg shadow-xl shadow-black/5">
             <img :src="currentVariant.img" :alt="product.name" class="h-full w-full object-cover transition duration-300 group-hover:scale-105" />
           </div>
           <div class="mt-3 flex gap-2.5">
@@ -52,6 +73,12 @@ const currentVariant = computed(() => props.product.variants[varIdx.value])
           <span class="eyebrow">{{ product.type }}</span>
           <h1 class="h-display mt-3 text-[28px] leading-[1.1] md:text-[44px] md:leading-[1.06]">{{ product.name }}</h1>
           <div class="mt-3.5 font-display text-[26px] text-ink">{{ rp(product.price) }}</div>
+          <div
+            v-if="product.stock !== null" class="mt-1.5 inline-block text-[12.5px]"
+            :class="isLowStock ? 'rounded-pill px-2.5 py-1 font-medium' : ''"
+            :style="isOutOfStock ? 'color:#B5675F' : (isLowStock ? 'background:#F7E3D4;color:var(--accent)' : 'color:#A39C90')">
+            {{ isOutOfStock ? 'Stok habis' : isLowStock ? `⚡ Sisa ${product.stock} lagi, buruan!` : `Sisa stok: ${product.stock}` }}
+          </div>
           <p class="mt-5 text-[16px] leading-[1.65] text-muted">{{ product.desc }}</p>
 
           <!-- Variant -->
@@ -69,23 +96,47 @@ const currentVariant = computed(() => props.product.variants[varIdx.value])
             </div>
           </div>
 
-          <!-- Beli via marketplace -->
-          <div class="mt-7 flex items-center gap-3">
-            <a :href="product.shopee || '#'" :target="product.shopee ? '_blank' : '_self'" rel="noopener"
-              class="btn-primary flex-1 whitespace-nowrap text-center no-underline"
-              :class="{ 'pointer-events-none opacity-40': !product.shopee }">Beli di Shopee</a>
-            <a :href="product.toko || '#'" :target="product.toko ? '_blank' : '_self'" rel="noopener"
-              class="btn-ghost flex-1 whitespace-nowrap text-center no-underline"
-              :class="{ 'pointer-events-none opacity-40': !product.toko }">Beli di Tokopedia</a>
+          <!-- Ukuran -->
+          <div class="mt-7">
+            <div class="mb-3 text-[12px] uppercase tracking-[0.14em] text-faint">Ukuran</div>
+            <div class="flex flex-wrap gap-2.5">
+              <button
+                v-for="(row, i) in product.sizes" :key="row[0]"
+                class="rounded-lg2 border px-3.5 py-2 text-[13px]"
+                :class="i === sizeIdx ? 'border-ink bg-ink text-canvas' : 'border-[#D9D2C7] text-[#3A372F]'"
+                @click="sizeIdx = i">{{ row[0] }}</button>
+            </div>
+          </div>
+
+          <!-- Beli -->
+          <div class="mt-7 flex flex-col gap-2.5">
+            <button class="btn-primary w-full" :class="{ 'pointer-events-none opacity-40': sizeIdx === null || isOutOfStock }" @click="addToCart">
+              {{ isOutOfStock ? 'Stok Habis' : 'Tambah ke Keranjang' }}
+            </button>
+            <div class="flex items-center gap-3">
+              <a :href="product.shopee || '#'" :target="product.shopee ? '_blank' : '_self'" rel="noopener"
+                class="btn-ghost flex-1 whitespace-nowrap text-center text-[13px] no-underline"
+                :class="{ 'pointer-events-none opacity-40': !product.shopee }">Beli di Shopee</a>
+              <a :href="product.toko || '#'" :target="product.toko ? '_blank' : '_self'" rel="noopener"
+                class="btn-ghost flex-1 whitespace-nowrap text-center text-[13px] no-underline"
+                :class="{ 'pointer-events-none opacity-40': !product.toko }">Beli di Tokopedia</a>
+            </div>
+            <div class="mt-1 flex flex-wrap items-center gap-x-4 gap-y-1.5 text-[11.5px] text-faint">
+              <span class="flex items-center gap-1.5"><Icon name="shield" :size="15" />Checkout Aman</span>
+              <span class="flex items-center gap-1.5"><Icon name="truck" :size="15" />Kirim ke Seluruh Indonesia</span>
+            </div>
           </div>
         </div>
       </section>
 
       <!-- Related -->
-      <section v-if="related.length" class="container-nale pb-16 pt-2 md:pb-[90px]">
-        <h3 class="h-display mb-5 text-[22px] md:mb-6 md:text-[28px]">Mungkin cocok juga</h3>
-        <div class="grid grid-cols-2 gap-4 md:grid-cols-3 md:gap-[22px]">
-          <ProductCard v-for="p in related" :key="p.id" :product="p" />
+      <section v-if="related.length" class="border-t border-line py-10 md:py-14" style="background:#FBF2EC">
+        <div class="container-nale">
+          <span class="eyebrow">Rekomendasi</span>
+          <h3 class="h-display mt-2 text-[22px] md:mt-2.5 md:text-[30px]">Mungkin cocok juga</h3>
+          <div class="mt-6 grid grid-cols-2 gap-4 md:mt-8 md:grid-cols-3 md:gap-[22px]">
+            <ProductCard v-for="p in related" :key="p.id" :product="p" />
+          </div>
         </div>
       </section>
     </main>

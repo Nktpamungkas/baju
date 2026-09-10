@@ -2,7 +2,9 @@
 
 namespace App\Domains\Product\Controller;
 
+use App\Domains\Order\Service\OrderService;
 use App\Domains\Product\Service\ProductService;
+use App\Domains\Review\Service\ReviewService;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
@@ -10,8 +12,11 @@ use Inertia\Response;
 
 class ProductController
 {
-    public function __construct(private ProductService $products)
-    {
+    public function __construct(
+        private ProductService $products,
+        private OrderService $orders,
+        private ReviewService $reviews,
+    ) {
     }
 
     public function home(): Response
@@ -23,6 +28,8 @@ class ProductController
 
         return Inertia::render('Home', [
             'products' => $this->products->listAll(),
+            'discount' => $this->orders->featuredDiscount(),
+            'reviews'  => $this->reviews->featuredForHome(),
         ]);
     }
 

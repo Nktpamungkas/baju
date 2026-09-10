@@ -72,6 +72,7 @@ class ProductService
     private function applyDefaults(array $data): array
     {
         $data['word'] = $data['word'] ?? 'warna';
+        $data['weight'] = $data['weight'] ?? 200;
         $data['variants'] = array_values($data['variants'] ?? []);
         $data['sizeCols'] = $data['sizeCols'] ?? ['Dada', 'Panjang', 'Lengan'];
         $data['sizes'] = $data['sizes'] ?? [['S', 0, 0, 0], ['M', 0, 0, 0], ['L', 0, 0, 0]];

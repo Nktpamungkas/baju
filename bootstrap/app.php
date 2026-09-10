@@ -21,6 +21,14 @@ return Application::configure(basePath: dirname(__DIR__))
         $middleware->alias([
             'admin' => \App\Http\Middleware\AdminAuth::class,
         ]);
+
+        // Midtrans & Biteship memanggil endpoint ini langsung dari server mereka,
+        // tidak punya token CSRF Laravel. Keamanannya dijaga masing-masing lewat
+        // verifikasi signature (Midtrans) dan token acak di path URL (Biteship).
+        $middleware->validateCsrfTokens(except: [
+            'webhooks/midtrans',
+            'webhooks/biteship/*',
+        ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
         //

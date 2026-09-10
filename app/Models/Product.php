@@ -17,6 +17,8 @@ class Product extends Model
         'sizeCols' => 'array',
         'sizes'    => 'array',
         'price'    => 'integer',
+        'weight'   => 'integer',
+        'stock'    => 'integer',
     ];
 
     // Kirim ke Inertia dengan bentuk sama seperti data/products.json

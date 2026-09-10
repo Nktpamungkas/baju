@@ -1,6 +1,8 @@
 <script setup>
 import { Link } from '@inertiajs/vue3'
-defineProps({ active: { type: String, default: 'home' } }) // 'home' | 'catalog' | 'about'
+import { useCart } from '@/lib/cart'
+defineProps({ active: { type: String, default: 'home' } }) // 'home' | 'catalog' | 'about' | 'lookup' | 'cart'
+const cart = useCart()
 </script>
 
 <template>
@@ -17,6 +19,11 @@ defineProps({ active: { type: String, default: 'home' } }) // 'home' | 'catalog'
       <Link href="/" class="text-[12.5px] md:text-[14px]" :class="active === 'home' ? 'text-ink' : 'text-faint'">Beranda</Link>
       <Link href="/katalog" class="text-[12.5px] md:text-[14px]" :class="active === 'catalog' ? 'text-ink' : 'text-faint'">Katalog</Link>
       <Link href="/tentang" class="text-[12.5px] md:text-[14px]" :class="active === 'about' ? 'text-ink' : 'text-faint'">Tentang</Link>
+      <Link href="/pesanan-saya" class="hidden text-[12.5px] md:block md:text-[14px]" :class="active === 'lookup' ? 'text-ink' : 'text-faint'">Cek Pesanan</Link>
+      <Link href="/keranjang" class="relative flex items-center" :class="active === 'cart' ? 'text-ink' : 'text-faint'">
+        <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h2l2.4 12.4a2 2 0 0 0 2 1.6h8.2a2 2 0 0 0 2-1.6L21 8H6" /><circle cx="10" cy="21" r="1.4" fill="currentColor" stroke="none" /><circle cx="18" cy="21" r="1.4" fill="currentColor" stroke="none" /></svg>
+        <span v-if="cart.count.value > 0" class="absolute -right-2 -top-2 flex h-4 w-4 items-center justify-center rounded-pill text-[9px] text-white" style="background:var(--accent)">{{ cart.count.value }}</span>
+      </Link>
     </nav>
   </header>
 </template>

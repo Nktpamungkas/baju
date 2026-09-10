@@ -30,6 +30,11 @@ class ProductRepository
         return Product::whereKey($id)->exists();
     }
 
+    public function find(string $id): ?Product
+    {
+        return Product::find($id);
+    }
+
     public function create(array $data): Product
     {
         return Product::create($data);
@@ -45,5 +50,20 @@ class ProductRepository
     public function delete(Product $product): void
     {
         $product->delete();
+    }
+
+    // Satu UPDATE atomik dengan guard di WHERE — aman dari race condition dua checkout
+    // barengan tanpa perlu row lock manual (SQLite serialize semua write di level file).
+    // stock NULL (tidak dilacak) otomatis lolos & tetap NULL setelah dikurangi.
+    public function decrementStock(string $id, int $qty): bool
+    {
+        return Product::whereKey($id)
+            ->where(fn ($q) => $q->whereNull('stock')->orWhere('stock', '>=', $qty))
+            ->decrement('stock', $qty) > 0;
+    }
+
+    public function incrementStock(string $id, int $qty): void
+    {
+        Product::whereKey($id)->increment('stock', $qty);
     }
 }
